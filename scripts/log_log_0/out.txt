@@ -1,0 +1,32 @@
+15:09:59
+
+=== Loading experiment [device: cuda] ===
+
+{'action_noise': None,
+ 'action_repeat': 3,
+ 'batch_size': 50,
+ 'coverage': False,
+ 'ensemble_size': 10,
+ 'env_name': 'pendulum',
+ 'epsilon': 1e-08,
+ 'expl_scale': 1.0,
+ 'expl_strategy': 'information',
+ 'grad_clip_norm': 1000,
+ 'hidden_size': 64,
+ 'learning_rate': 0.001,
+ 'logdir': 'log',
+ 'max_episode_len': 100,
+ 'n_candidates': 500,
+ 'n_episodes': 5,
+ 'n_seed_episodes': 5,
+ 'n_train_epochs': 100,
+ 'optimisation_iters': 5,
+ 'plan_horizon': 5,
+ 'record_every': 0,
+ 'reward_scale': 1.0,
+ 'seed': 0,
+ 'strategy': 'information',
+ 'top_candidates': 50,
+ 'use_exploration': True,
+ 'use_mean': False,
+ 'use_reward': True}

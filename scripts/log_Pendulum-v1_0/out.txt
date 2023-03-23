@@ -1,0 +1,118 @@
+10:26:03
+
+=== Loading experiment [device: cuda] ===
+
+{'action_noise': None,
+ 'action_repeat': 3,
+ 'batch_size': 50,
+ 'coverage': False,
+ 'ensemble_size': 10,
+ 'env_name': 'Pendulum-v1',
+ 'epsilon': 1e-08,
+ 'expl_scale': 1.0,
+ 'expl_strategy': 'information',
+ 'grad_clip_norm': 1000,
+ 'hidden_size': 64,
+ 'learning_rate': 0.001,
+ 'logdir': 'Pendulum-v1',
+ 'max_episode_len': 100,
+ 'n_candidates': 500,
+ 'n_episodes': 5,
+ 'n_seed_episodes': 5,
+ 'n_train_epochs': 100,
+ 'optimisation_iters': 5,
+ 'plan_horizon': 5,
+ 'record_every': 0,
+ 'reward_scale': 1.0,
+ 'seed': 0,
+ 'strategy': 'information',
+ 'top_candidates': 50,
+ 'use_exploration': True,
+ 'use_mean': False,
+ 'use_reward': False}
+
+Collected seeds: [5 episodes | 335 frames]
+
+=== Episode 1 ===
+Training on [335/1005] data points
+> Train epoch 20 [ensemble 27.32 | reward 226.90]
+> Train epoch 40 [ensemble 2.23 | reward 128.54]
+> Train epoch 60 [ensemble -9.59 | reward 89.56]
+> Train epoch 80 [ensemble -17.67 | reward 68.33]
+> Train epoch 100 [ensemble -23.22 | reward 55.34]
+Ensemble loss -23.22 / Reward Loss 55.34
+Setup recoder @ log_Pendulum-v1_0/videos/1.mp4
+
+=== Collecting data [1] ===
+> Step 25 [reward -576.27]
+> Step 50 [reward -1217.90]
+Rewards -1626.06 / Steps 67.00
+Reward stats:
+ {}
+Information gain stats:
+ {'max': '33.66', 'mean': '13.66', 'min': '-0.32', 'std': '6.39'}
+Episode time 8.42
+Saved _metrics_
+
+=== Episode 2 ===
+Training on [402/1206] data points
+> Train epoch 20 [ensemble 18.60 | reward 182.70]
+> Train epoch 40 [ensemble -2.98 | reward 103.65]
+> Train epoch 60 [ensemble -14.29 | reward 71.28]
+> Train epoch 80 [ensemble -21.22 | reward 54.38]
+> Train epoch 100 [ensemble -25.79 | reward 44.10]
+Ensemble loss -25.79 / Reward Loss 44.10
+Setup recoder @ log_Pendulum-v1_0/videos/2.mp4
+
+=== Collecting data [2] ===
+> Step 25 [reward -498.84]
+> Step 50 [reward -1072.47]
+Rewards -1491.56 / Steps 67.00
+Reward stats:
+ {}
+Information gain stats:
+ {'max': '19.50', 'mean': '7.22', 'min': '-2.14', 'std': '3.29'}
+Episode time 6.24
+Saved _metrics_
+
+=== Episode 3 ===
+Training on [469/1407] data points
+> Train epoch 20 [ensemble 13.79 | reward 165.53]
+> Train epoch 40 [ensemble -6.25 | reward 93.37]
+> Train epoch 60 [ensemble -16.82 | reward 64.07]
+> Train epoch 80 [ensemble -23.18 | reward 49.07]
+> Train epoch 100 [ensemble -27.33 | reward 39.88]
+Ensemble loss -27.33 / Reward Loss 39.88
+Setup recoder @ log_Pendulum-v1_0/videos/3.mp4
+
+=== Collecting data [3] ===
+> Step 25 [reward -544.44]
+> Step 50 [reward -1108.78]
+Rewards -1493.53 / Steps 67.00
+Reward stats:
+ {}
+Information gain stats:
+ {'max': '15.56', 'mean': '7.32', 'min': '-0.16', 'std': '1.97'}
+Episode time 6.28
+Saved _metrics_
+
+=== Episode 4 ===
+Training on [536/1608] data points
+> Train epoch 20 [ensemble 10.10 | reward 140.05]
+> Train epoch 40 [ensemble -8.67 | reward 75.11]
+> Train epoch 60 [ensemble -18.56 | reward 51.42]
+> Train epoch 80 [ensemble -24.40 | reward 39.30]
+> Train epoch 100 [ensemble -28.16 | reward 31.87]
+Ensemble loss -28.16 / Reward Loss 31.87
+Setup recoder @ log_Pendulum-v1_0/videos/4.mp4
+
+=== Collecting data [4] ===
+> Step 25 [reward -529.42]
+> Step 50 [reward -1089.56]
+Rewards -1464.65 / Steps 67.00
+Reward stats:
+ {}
+Information gain stats:
+ {'max': '25.22', 'mean': '6.40', 'min': '-1.63', 'std': '1.60'}
+Episode time 6.00
+Saved _metrics_
