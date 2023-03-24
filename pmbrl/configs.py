@@ -2,9 +2,10 @@ import pprint
 
 MOUNTAIN_CAR_CONFIG = "SparseMountainCar-v0"
 PENDULUM_CONFIG = "Pendulum-v1"
+FROZENLAKE_CONFIG = "FrozenLake-v1"
 
 def print_configs():
-    print(f"[{MOUNTAIN_CAR_CONFIG}, {PENDULUM_CONFIG} ]")
+    print(f"[{MOUNTAIN_CAR_CONFIG}, {PENDULUM_CONFIG} ,{FROZENLAKE_CONFIG}]")
 
 def get_config(args):
 
@@ -12,6 +13,8 @@ def get_config(args):
         config = PendulumConfig()
     elif args.config_name == MOUNTAIN_CAR_CONFIG:
         config = MountainCarConfig()
+    elif args.config_name == FROZENLAKE_CONFIG:
+        config = FrozenLakeConfig()
     else:
         raise ValueError("`{}` is not a valid config ID".format(args.config_name))
 
@@ -80,6 +83,22 @@ class PendulumConfig(Config):
         self.hidden_size = 64
         self.plan_horizon = 5
         self.record_every = 0
+
+
+
+# 调整超参，训练过程很不尽如人意
+class FrozenLakeConfig(Config):
+    def __init__(self):
+        super().__init__()
+        self.logdir = "FrozenLake-v1"
+        self.env_name = "FrozenLake-v1"
+        self.max_episode_len = 500
+        self.n_train_epochs = 100
+        self.n_seed_episodes = 1
+        self.expl_scale = 1.0
+        self.ensemble_size = 30
+        self.record_every = 0  # 改，从None改为0
+        self.n_episodes = 50
 
 
 class MountainCarConfig(Config):

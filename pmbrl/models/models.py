@@ -40,7 +40,7 @@ class EnsembleDenseLayer(nn.Module):
         if act_fn_name == "swish":
             nn.init.xavier_uniform_(weight)
         elif act_fn_name == "linear":
-            nn.init.xavier_normal_(weight)
+            nn.init.xavier_normal_(weight)  #关于这两个函数的xavier_normal_，以及具体这么初始化的原因????
 
     def _get_act_fn(self, act_fn_name):
         if act_fn_name == "swish":
@@ -102,7 +102,7 @@ class EnsembleModel(nn.Module):
         return loss
 
     def sample(self, mean, var):
-        return Normal(mean, torch.sqrt(var)).sample()
+        return Normal(mean, torch.sqrt(var)).sample()  #正态分布
 
     def reset_parameters(self):
         self.fc_1.reset_parameters()
@@ -121,7 +121,7 @@ class EnsembleModel(nn.Module):
         delta_mean, delta_logvar = torch.split(op, op.size(2) // 2, dim=2)
         delta_logvar = torch.sigmoid(delta_logvar)
         delta_logvar = (
-            self.min_logvar + (self.max_logvar - self.min_logvar) * delta_logvar
+            self.min_logvar + (self.max_logvar - self.min_logvar) * delta_logvar   #关于这一点目的是何???
         )
         delta_var = torch.exp(delta_logvar)
 

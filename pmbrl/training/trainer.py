@@ -38,7 +38,7 @@ class Trainer(object):
             e_losses.append([])
             r_losses.append([])
             n_batches.append(0)
-
+            # (ensemble_size, batch_size , shape),所以下面的一共循环ensemble_size 次
             for (states, actions, rewards, deltas) in self.buffer.get_train_batches(
                 self.batch_size
             ):
@@ -51,9 +51,9 @@ class Trainer(object):
                 (e_loss + r_loss).backward()
                 torch.nn.utils.clip_grad_norm_(
                     self.params, self.grad_clip_norm, norm_type=2
-                )
+                )   #这个函数的目的是何？？？
                 self.optim.step()
-
+                # e_losses 或是r_losses 的形式[[1，2，...,ensemble_size],[2,...],[22,...],...epoch],而n_batches 的形式是[1,2,3,4]这种类型
                 e_losses[epoch - 1].append(e_loss.item())
                 r_losses[epoch - 1].append(r_loss.item())
                 n_batches[epoch - 1] += 1

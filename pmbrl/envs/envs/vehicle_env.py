@@ -30,14 +30,9 @@ w = 0.5
 b = 5
 
 
-
 MEC = [i for i in range(4, 13, 2)]
 SE = [1, 3]
 
-
-def expntl(L):
-    u = np.random.random()
-    return -L * math.log(u)
 
 def random_pick(some_list, probability):
     x = random.uniform(0, 1)
@@ -52,11 +47,11 @@ def random_pick(some_list, probability):
 class env(object):
     def __init__(self):
         self.reset()
-        self.BS_list = [BaseStation(self.state[0][1],self.state[0][0],0),
-                        BaseStation(self.state[1][1],self.state[1][0],0),
-                        BaseStation(self.state[2][1],self.state[2][0],0),
-                        BaseStation(self.state[3][1],self.state[3][0],0),
-                        BaseStation(self.state[4][1],self.state[4][0],0)]
+        self.BS_list = [BaseStation(self.state[0][1],self.state[0][0]),
+                        BaseStation(self.state[1][1],self.state[1][0]),
+                        BaseStation(self.state[2][1],self.state[2][0]),
+                        BaseStation(self.state[3][1],self.state[3][0]),
+                        BaseStation(self.state[4][1],self.state[4][0])]
 
         self.count_step = 0
 
@@ -84,25 +79,22 @@ class env(object):
 
         bs = self.BS_list[index]
 
-        # 用户和BS相互映射，但每步都这么做，是不是有问题?我总觉得这个有问题
-        oUser = OtherUser(bs, time = )
+        # 用户和BS相互映射，这里是每走一步就要进行一下任务卸载，这里的time要根据泊松分布来设置，
+        oUser = OtherUser(bs, time = int(np.random.poisson(1,1)))
         bs.add_user(oUser)
 
         # 计算reward
         reward = self.caculate_Reward(bs)
 
 
-        # bc1 = self.BS_list[0]
-        #
-        # for user in list(bc1.users.values()):
-        #     id = user.id
-        #     ti = user.time_step()
-        #     if ti == 0:
-        #         del self.time1[id]
-        #     else:
-        #         self.time1[id] = self.time1[id] - 1
+        # all BS user rest_time update。所有bs中的所有用户都-1，因为是虚拟并行操作。可以想成在一秒钟内，所有基站对用户请求都处理了一次，并行执行
+        for _bs in self.BS_list:
+            for user in list(_bs.users.values()):
+                ti = user.time_step()
+                if ti == 0:
+                    _bs.remove_user(user)
 
-        # 状态转移
+        # state transition
         for bs in self.BS_list:
             bs.tran_state1()
             bs.tran_state2()
@@ -118,6 +110,7 @@ class env(object):
         self.count_step += 1
         if self.count_step >10000:
             done = True
+
         return self.state.reshape(-1), reward, done, {}
 
 
@@ -130,13 +123,11 @@ class env(object):
 
 
 class BaseStation(object):
-    def __init__(self, se, mec, vehicle):
+    def __init__(self, se, mec):
         self.users = {}
         self.user_id = 0
         self.se = se       # the spectrum efficiency
         self.mec = mec    #基站mec的值
-        self.vehicle = vehicle  #这个vehicle是干嘛的？
-
         self.ve = 0
 
     def add_user(self, user):
@@ -176,9 +167,9 @@ class BaseStation(object):
 
 class OtherUser(object):
     def __init__(self, bs, time):
-        self.bs = bs
-        self.id = 0
-        self.rest_time = time   #这个是用户的delay吗？每走一步是不是要考虑所有用户的delay是否变为<0
+        self.bs = bs   # bs和 user相对应
+        self.id = 0    #这个是需要的，他会在BS类里进行初始化
+        self.rest_time = time   #剩余需要处理的时间
 
     def get_time(self):
         return self.rest_time

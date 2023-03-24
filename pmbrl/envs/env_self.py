@@ -7,14 +7,16 @@ import numpy as np
 class Env(object):
 
     def __init__(self,env_name, max_episode_len, action_repeat = 1, seed = None):
-        self.env = gym.make(env_name,render_mode = render_mode)
+        self.env = gym.make(env_name, render_mode = "rgb_array")
         self.max_episode_len = max_episode_len
         self.action_repeat = action_repeat
 
         self.env_name = env_name
+        self.t = 0
 
     def reset(self):
         state, _ = self.env.reset()
+        self.t = 0
         return state
 
     def SparseMountainCar_step(self,action):
@@ -35,21 +37,20 @@ class Env(object):
         reward = 0
         for _ in range(self.action_repeat):
 
-            if self.env_name =="Pendulum":
+            if self.env_name =="Pendulum-v1":
                 state, reward_k, done, info = self.Pendulum_step(action)
-            elif self.env_name == "SparseMountainCar":
+
+            elif self.env_name == "SparseMountainCar-v0":
                 state, reward_k, done, info = self.SparseMountainCar_step(action)
 
             reward += reward_k
             self.t += 1
-            done = done or self.t == self.max_episode_len  # 运算符优先级，计算顺序为 done  = (done or (self.t == self.max_episode_len))
+            # max_episode_len 在这里并不是很必要
+            # done = done or self.t == self.max_episode_len  # 运算符优先级，计算顺序为 done  = (done or (self.t == self.max_episode_len))
             if done:
                 self.done = True
                 break
         return state, reward, done, info
-
-
-
 
     def sample_action(self):
         return self.env.action_space.sample()

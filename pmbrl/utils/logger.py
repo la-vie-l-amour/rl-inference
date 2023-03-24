@@ -2,10 +2,14 @@ import os
 import json
 from datetime import datetime
 import pprint
+import pylab
+import os
+from IPython.core.display import clear_output
 
 
 class Logger(object):
     def __init__(self, logdir, seed):
+
         self.logdir = logdir
         self.seed = seed
         self.path = "log_" + logdir + "_" + str(seed) + "/"
@@ -86,4 +90,17 @@ class Logger(object):
     def _save_json(self, path, obj):
         with open(path, "w") as file:
             json.dump(obj, file)
+
+    def _save_fig(self, rewards):
+        clear_output(True)  # 一定要有这行, 否则图片显示可能为空白
+        fig = pylab.figure(figsize=(12, 10))
+        pylab.plot(rewards, 'b')
+        pylab.xlabel('step')
+        pylab.ylabel('reward')
+        graph_dir = f"{self.path}/graphs/"
+        if not os.path.exists(graph_dir):
+            os.makedirs(graph_dir)
+        pylab.savefig(f"{graph_dir}reward.jpg", bbox_inches="tight")
+        pylab.close(fig)
+
 

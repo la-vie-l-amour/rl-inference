@@ -61,25 +61,29 @@ class Planner(nn.Module):
 
         state = torch.from_numpy(state).float().to(self.device)
         state_size = state.size(0)
-
+        # plan_horizon 计划时段
         action_mean = torch.zeros(self.plan_horizon, 1, self.action_size).to(
             self.device
         )
         action_std_dev = torch.ones(self.plan_horizon, 1, self.action_size).to(
             self.device
         )
+        # 这里为何要使用循环？？？？
         for _ in range(self.optimisation_iters):
+
+            # Algorithm 1 中的 Sample J candidate policies from q(Π)，使其服从 N(action_mean, action_std_dev)
             actions = action_mean + action_std_dev * torch.randn(
                 self.plan_horizon,
                 self.n_candidates,
                 self.action_size,
                 device=self.device,
             )
+            # Algorithm 1 的外层循环 for optimisation iteration i = 1,...I 这个其实是以矩阵的形式算的，并没有进行for循环这样。而perform_rollout执行的是for cnadidate policy j =1...J do这整个循环。
             states, delta_vars, delta_means = self.perform_rollout(state, actions)
 
             returns = torch.zeros(self.n_candidates).float().to(self.device)
             if self.use_exploration:
-                expl_bonus = self.measure(delta_means, delta_vars) * self.expl_scale
+                expl_bonus = self.measure(delta_means, delta_vars) * self.expl_scale   #这里是intrinsic reward ，论文VIME
                 returns += expl_bonus
                 self.trial_bonuses.append(expl_bonus)
 
@@ -96,22 +100,25 @@ class Planner(nn.Module):
                 returns += rewards
                 self.trial_rewards.append(rewards)
 
+            # Algorithm 1 中的q(Π) <-- refit(-F_{Π}^{j})
             action_mean, action_std_dev = self._fit_gaussian(actions, returns)
 
         return action_mean[0].squeeze(dim=0)
 
+    # 执行 plan_horizon 个时间
     def perform_rollout(self, current_state, actions):
         T = self.plan_horizon + 1
+        # states = [tensor([]), tensor([]), ...]共T个tensor([])
         states = [torch.empty(0)] * T
         delta_means = [torch.empty(0)] * T
         delta_vars = [torch.empty(0)] * T
 
-        current_state = current_state.unsqueeze(dim=0).unsqueeze(dim=0)
-        current_state = current_state.repeat(self.ensemble_size, self.n_candidates, 1)
-        states[0] = current_state
+        current_state = current_state.unsqueeze(dim=0).unsqueeze(dim=0)    # [[[1,2,3,4，...]]]
+        current_state = current_state.repeat(self.ensemble_size, self.n_candidates, 1) #current_state 的shape is ensemble_size * n_candidates * state_size
+        states[0] = current_state  #states‘ shape ： T * ensemble_size * n_candidates * state_size
 
         actions = actions.unsqueeze(0)
-        actions = actions.repeat(self.ensemble_size, 1, 1, 1).permute(1, 0, 2, 3)
+        actions = actions.repeat(self.ensemble_size, 1, 1, 1).permute(1, 0, 2, 3)   # actions' shape : T * ensemble_size * n_candidates * action_size
 
         for t in range(self.plan_horizon):
             delta_mean, delta_var = self.ensemble(states[t], actions[t])
@@ -122,7 +129,7 @@ class Planner(nn.Module):
             delta_means[t + 1] = delta_mean
             delta_vars[t + 1] = delta_var
 
-        states = torch.stack(states[1:], dim=0)
+        states = torch.stack(states[1:], dim=0) # states' shape : （T-1） * ensemble_size * n_candidates * state_size
         delta_vars = torch.stack(delta_vars[1:], dim=0)
         delta_means = torch.stack(delta_means[1:], dim=0)
         return states, delta_vars, delta_means
@@ -139,6 +146,9 @@ class Planner(nn.Module):
         )
         return action_mean, action_std_dev
 
+
+
+    # stats这里应该是“统计”的意思，并没有实际的作用，主要的目的是将self.trial_rewards = [],以及trail_bonuses = []
     def return_stats(self):
         if self.use_reward:
             reward_stats = self._create_stats(self.trial_rewards)
@@ -154,7 +164,7 @@ class Planner(nn.Module):
 
     def _create_stats(self, arr):
         tensor = torch.stack(arr)
-        tensor = tensor.view(-1)
+        tensor = tensor.view(-1)  #view（-1）会把一个任何形状的tensor转为一个行的tensor，例如tensor([1,2,3,4,...])
         return {
             "max": tensor.max().item(),
             "min": tensor.min().item(),

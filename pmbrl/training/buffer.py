@@ -18,7 +18,7 @@ class Buffer(object):
     ):
         self.state_size = state_size
         self.action_size = action_size
-        self.ensemble_size = ensemble_size
+        self.ensemble_size = ensemble_size  #多少个batch_size
         self.buffer_size = buffer_size
         self.signal_noise = signal_noise
         self.device = device

@@ -8,16 +8,17 @@ import torch
 class Normalizer(object):
     def __init__(self):
         self.state_mean = None
-        self.state_sk = None
-        self.state_stdev = None
+        self.state_sk = None     # sk 是求方差的时候开根号前的分子项，即sum(x_i - miu)^2
+        self.state_stdev = None  #stdev是标准差
         self.action_mean = None
         self.action_sk = None
         self.action_stdev = None
         self.state_delta_mean = None
         self.state_delta_sk = None
         self.state_delta_stdev = None
-        self.count = 0
+        self.count = 0                   # 记录数的个数，或者说是记录
 
+    # addendum 是新加进去的数字， n是加完新数字后的所有数的个数
     @staticmethod
     def update_mean(mu_old, addendum, n):
         mu_new = mu_old + (addendum - mu_old) / n
@@ -93,7 +94,7 @@ class Normalizer(object):
         return self._normalize(
             state_deltas, self.state_delta_mean, self.state_delta_stdev
         )
-
+    # 之后的四个函数的目的是什么？？？
     def denormalize_state_delta_means(self, state_deltas_means):
         mean, stdev = self.setup_vars(
             state_deltas_means, self.state_delta_mean, self.state_delta_stdev
