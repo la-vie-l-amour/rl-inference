@@ -23,14 +23,7 @@ from pmbrl import get_config
 
 DEVICE = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
 
-
-
-
-
-
 def main(args):
-
-
     logger = Logger(args.logdir, args.seed)
     logger.log("\n=== Loading experiment [device: {}] ===\n".format(DEVICE))
     logger.log(args)
@@ -96,13 +89,19 @@ def main(args):
         device=DEVICE,
     )
     agent = Agent(env, planner, logger=logger)
+
+
     # 1. Agent首先与环境互动执行一段时间，目的是获得experience对，或者说是先初始化buffer
     agent.get_seed_episodes(buffer, args.n_seed_episodes)
     msg = "\nCollected seeds: [{} episodes | {} frames]"
     logger.log(msg.format(args.n_seed_episodes, buffer.total_steps))
-    # 自己改
-    # trainer.reset_models()
+
+    # to picture
     eposide_rewads = []
+    eposide_ensemble_loss = []
+    eposide_reward_loss = []
+
+    # trainer.reset_models()   # 将reset_models放在这里，使程序跑的很慢，如果是要提高程序运行的速度，应该将其放在for循环内
     for episode in range(1, args.n_episodes):
         logger.log("\n=== Episode {} ===".format(episode))
         start_time = time.time()
@@ -114,6 +113,8 @@ def main(args):
         # 3. 对上面的模型进行训练
         ensemble_loss, reward_loss = trainer.train()
         logger.log_losses(ensemble_loss, reward_loss)
+        eposide_ensemble_loss.append(ensemble_loss)
+        eposide_reward_loss.append(reward_loss)
 
         recorder = None
         if args.record_every is not None and args.record_every % episode == 0:
@@ -126,6 +127,7 @@ def main(args):
         reward, steps, stats = agent.run_episode(
             buffer, action_noise=args.action_noise, recorder=recorder
         )
+
         eposide_rewads.append(reward)
         logger.log_episode(reward, steps)
         logger.log_stats(stats)
@@ -137,13 +139,15 @@ def main(args):
         logger.log_time(time.time() - start_time)
         logger.save()
 
-    logger._save_fig(eposide_rewads)
+    logger._save_fig(eposide_rewads,"reward" )
+    logger._save_fig(eposide_ensemble_loss, "ensemble_loss")
+    logger._save_fig(eposide_reward_loss, "reward loss")
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--logdir", type=str, default="log")
-    parser.add_argument("--config_name", type=str, default="Pendulum-v1")  # Pendulum-v1, SparseMountainCar-v0,FrozenLake-v1
+    parser.add_argument("--config_name", type=str, default="FrozenLake-v1")  # Pendulum-v1, SparseMountainCar-v0, FrozenLake-v1
     parser.add_argument("--strategy", type=str, default="information")
     parser.add_argument("--seed", type=int, default=0)
     args = parser.parse_args()   # args, unknown = parser.parse_know_args()

@@ -123,7 +123,9 @@ class EnsembleModel(nn.Module):
         delta_logvar = (
             self.min_logvar + (self.max_logvar - self.min_logvar) * delta_logvar   #关于这一点目的是何???
         )
-        delta_var = torch.exp(delta_logvar)
+
+
+        delta_var = torch.exp(delta_logvar)  #this is no problem .don't edit
 
         return delta_mean, delta_var
 

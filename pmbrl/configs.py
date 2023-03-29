@@ -96,9 +96,12 @@ class FrozenLakeConfig(Config):
         self.n_train_epochs = 100
         self.n_seed_episodes = 1
         self.expl_scale = 1.0
-        self.ensemble_size = 30
+        self.n_episodes = 30
+
+        self.ensemble_size = 25
         self.record_every = 0  # 改，从None改为0
-        self.n_episodes = 50
+        self.action_repeat = 1
+
 
 
 class MountainCarConfig(Config):
@@ -113,5 +116,7 @@ class MountainCarConfig(Config):
         self.n_episodes = 30
         self.ensemble_size = 25
         self.record_every = 0  #改，从None改为0
-        self.n_episodes = 50
+
+        self.use_exploration = False
+
 

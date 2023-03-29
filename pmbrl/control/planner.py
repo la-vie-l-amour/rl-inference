@@ -68,7 +68,7 @@ class Planner(nn.Module):
         action_std_dev = torch.ones(self.plan_horizon, 1, self.action_size).to(
             self.device
         )
-        # 这里为何要使用循环？？？？
+        # 这里的循环是迭代次数
         for _ in range(self.optimisation_iters):
 
             # Algorithm 1 中的 Sample J candidate policies from q(Π)，使其服从 N(action_mean, action_std_dev)
@@ -78,14 +78,16 @@ class Planner(nn.Module):
                 self.action_size,
                 device=self.device,
             )
-            # Algorithm 1 的外层循环 for optimisation iteration i = 1,...I 这个其实是以矩阵的形式算的，并没有进行for循环这样。而perform_rollout执行的是for cnadidate policy j =1...J do这整个循环。
+            # Algorithm 1 的外层循环 for candidate iteration i = 1,...I 这个其实是以矩阵的形式算的，并没有进行for循环这样。而perform_rollout执行的是for tao = t...t+H这个循环。
             states, delta_vars, delta_means = self.perform_rollout(state, actions)
 
             returns = torch.zeros(self.n_candidates).float().to(self.device)
+
             if self.use_exploration:
                 expl_bonus = self.measure(delta_means, delta_vars) * self.expl_scale   #这里是intrinsic reward ，论文VIME
                 returns += expl_bonus
                 self.trial_bonuses.append(expl_bonus)
+
 
             if self.use_reward:
                 _states = states.view(-1, state_size)
@@ -145,7 +147,6 @@ class Planner(nn.Module):
             best_actions.std(dim=1, unbiased=False, keepdim=True),
         )
         return action_mean, action_std_dev
-
 
 
     # stats这里应该是“统计”的意思，并没有实际的作用，主要的目的是将self.trial_rewards = [],以及trail_bonuses = []

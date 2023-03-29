@@ -28,7 +28,7 @@ class GymEnv(object):
             state, reward_k, done, info = self.env.step(action)
             reward += reward_k
             self.t += 1
-            # done = done or self.t == self.max_episode_len  # 运算符优先级，计算顺序为 done  = (done or (self.t == self.max_episode_len))
+            done = done or self.t == self.max_episode_len  # 运算符优先级，计算顺序为 done  = (done or (self.t == self.max_episode_len))
             if done:
                 self.done = True
                 break
@@ -54,7 +54,6 @@ class GymEnv(object):
     @property
     def unwrapped(self):
         return self.env.env   #这里必须是env.env才可以生成视频
-
 
 
     def _get_env_object(self, env_name):
