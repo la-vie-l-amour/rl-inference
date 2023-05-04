@@ -6,6 +6,7 @@ import numpy as np
 SPARSE_MOUNTAIN_CAR = "SparseMountainCar-v0"
 PENDULUM = "Pendulum-v1"
 FROZENLAKE = "FrozenLake-v1"
+VEHICLE = "Vehicle"
 
 
 class GymEnv(object):
@@ -75,3 +76,9 @@ class GymEnv(object):
             from pmbrl.envs.envs.frozen_lake import FrozenLake
 
             return FrozenLake()
+
+        if env_name == VEHICLE:
+
+            from pmbrl.envs.envs.vehicle_env import Vehicle
+
+            return Vehicle()

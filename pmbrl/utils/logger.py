@@ -1,7 +1,10 @@
 import os
 import json
+import pickle
 from datetime import datetime
 import pprint
+
+import numpy as np
 import pylab
 import os
 from IPython.core.display import clear_output
@@ -91,16 +94,23 @@ class Logger(object):
         with open(path, "w") as file:
             json.dump(obj, file)
 
-    def _save_fig(self, rewards, graph_name):
+    def _save_fig(self, rewards, stds, graph_name):
         clear_output(True)  # 一定要有这行, 否则图片显示可能为空白
         fig = pylab.figure(figsize=(12, 10))
         pylab.plot(rewards, 'b')
-        pylab.xlabel('step')
-        pylab.ylabel(f'{graph_name}')
+        pylab.xlabel('iteration')
+        pylab.ylabel('reward')
+        pylab.title(f'FEEF {np.mean(np.array(rewards))}')
         graph_dir = f"{self.path}/graphs"
         if not os.path.exists(graph_dir):
             os.makedirs(graph_dir)
         pylab.savefig(f"{graph_dir}/{graph_name}.jpg", bbox_inches="tight")
         pylab.close(fig)
+        print(rewards)
+        with open(f"{graph_dir}/rewads_buffer", 'wb') as f:
+            pickle.dump(rewards, f)
+
+        with open(f"{graph_dir}/stds_buffer", 'wb') as f:
+            pickle.dump(stds, f)
 
 

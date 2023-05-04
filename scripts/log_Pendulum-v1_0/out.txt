@@ -1,0 +1,1069 @@
+17:46:08
+
+=== Loading experiment [device: cuda] ===
+
+{'action_noise': None,
+ 'action_repeat': 3,
+ 'batch_size': 50,
+ 'coverage': False,
+ 'ensemble_size': 10,
+ 'env_name': 'Pendulum-v1',
+ 'epsilon': 1e-08,
+ 'expl_scale': 1.0,
+ 'expl_strategy': 'information',
+ 'grad_clip_norm': 1000,
+ 'hidden_size': 64,
+ 'learning_rate': 0.0003,
+ 'logdir': 'Pendulum-v1',
+ 'max_episode_len': 100,
+ 'n_candidates': 500,
+ 'n_episodes': 70,
+ 'n_seed_episodes': 5,
+ 'n_train_epochs': 10,
+ 'optimisation_iters': 5,
+ 'plan_horizon': 5,
+ 'record_every': 0,
+ 'reward_scale': 1.0,
+ 'seed': 0,
+ 'strategy': 'information',
+ 'top_candidates': 50,
+ 'use_exploration': True,
+ 'use_mean': False,
+ 'use_reward': True}
+
+Collected seeds: [5 episodes | 170 frames]
+
+=== Episode 1 ===
+Training on [170/510] data points
+Ensemble loss 152.23 / Reward Loss 514.40
+Setup recoder @ log_Pendulum-v1_0/videos/1.mp4
+
+=== Collecting data [1] ===
+> Step 25 [reward -476.58]
+Rewards -655.19 / Steps 34.00
+Reward stats:
+ {'max': '-0.22', 'mean': '-1.56', 'min': '-3.35', 'std': '0.76'}
+Information gain stats:
+ {'max': '5.09', 'mean': '0.47', 'min': '-4.61', 'std': '1.14'}
+Episode time 2.97
+Saved _metrics_
+
+=== Episode 2 ===
+Training on [204/612] data points
+Ensemble loss 102.51 / Reward Loss 474.08
+Setup recoder @ log_Pendulum-v1_0/videos/2.mp4
+
+=== Collecting data [2] ===
+> Step 25 [reward -518.92]
+Rewards -749.21 / Steps 34.00
+Reward stats:
+ {'max': '-2.57', 'mean': '-4.89', 'min': '-11.78', 'std': '1.89'}
+Information gain stats:
+ {'max': '6.27', 'mean': '0.93', 'min': '-4.76', 'std': '1.31'}
+Episode time 1.71
+Saved _metrics_
+
+=== Episode 3 ===
+Training on [238/714] data points
+Ensemble loss 52.16 / Reward Loss 432.26
+Setup recoder @ log_Pendulum-v1_0/videos/3.mp4
+
+=== Collecting data [3] ===
+> Step 25 [reward -680.11]
+Rewards -919.74 / Steps 34.00
+Reward stats:
+ {'max': '-6.56', 'mean': '-8.20', 'min': '-17.41', 'std': '0.98'}
+Information gain stats:
+ {'max': '5.96', 'mean': '0.97', 'min': '-4.27', 'std': '1.17'}
+Episode time 1.71
+Saved _metrics_
+
+=== Episode 4 ===
+Training on [272/816] data points
+Ensemble loss 13.79 / Reward Loss 384.24
+Setup recoder @ log_Pendulum-v1_0/videos/4.mp4
+
+=== Collecting data [4] ===
+> Step 25 [reward -576.59]
+Rewards -816.59 / Steps 34.00
+Reward stats:
+ {'max': '-14.96', 'mean': '-21.33', 'min': '-50.54', 'std': '5.72'}
+Information gain stats:
+ {'max': '8.21', 'mean': '1.97', 'min': '-4.11', 'std': '1.47'}
+Episode time 1.76
+Saved _metrics_
+
+=== Episode 5 ===
+Training on [306/918] data points
+Ensemble loss -4.32 / Reward Loss 269.02
+Setup recoder @ log_Pendulum-v1_0/videos/5.mp4
+
+=== Collecting data [5] ===
+> Step 25 [reward -626.03]
+Rewards -869.52 / Steps 34.00
+Reward stats:
+ {'max': '-31.68', 'mean': '-40.23', 'min': '-88.36', 'std': '9.22'}
+Information gain stats:
+ {'max': '7.65', 'mean': '1.93', 'min': '-3.29', 'std': '1.27'}
+Episode time 1.81
+Saved _metrics_
+
+=== Episode 6 ===
+Training on [340/1020] data points
+Ensemble loss -12.49 / Reward Loss 159.42
+Setup recoder @ log_Pendulum-v1_0/videos/6.mp4
+
+=== Collecting data [6] ===
+> Step 25 [reward -572.20]
+Rewards -811.64 / Steps 34.00
+Reward stats:
+ {'max': '-52.04', 'mean': '-68.28', 'min': '-145.01', 'std': '15.53'}
+Information gain stats:
+ {'max': '8.33', 'mean': '2.19', 'min': '-3.60', 'std': '1.36'}
+Episode time 1.81
+Saved _metrics_
+
+=== Episode 7 ===
+Training on [374/1122] data points
+Ensemble loss -17.10 / Reward Loss 96.92
+Setup recoder @ log_Pendulum-v1_0/videos/7.mp4
+
+=== Collecting data [7] ===
+> Step 25 [reward -476.04]
+Rewards -703.90 / Steps 34.00
+Reward stats:
+ {'max': '-49.52', 'mean': '-89.46', 'min': '-169.39', 'std': '18.00'}
+Information gain stats:
+ {'max': '9.43', 'mean': '2.61', 'min': '-3.67', 'std': '1.50'}
+Episode time 1.89
+Saved _metrics_
+
+=== Episode 8 ===
+Training on [408/1224] data points
+Ensemble loss -19.89 / Reward Loss 67.40
+Setup recoder @ log_Pendulum-v1_0/videos/8.mp4
+
+=== Collecting data [8] ===
+> Step 25 [reward -635.79]
+Rewards -873.93 / Steps 34.00
+Reward stats:
+ {'max': '-84.85', 'mean': '-92.90', 'min': '-136.57', 'std': '5.32'}
+Information gain stats:
+ {'max': '7.06', 'mean': '2.03', 'min': '-3.06', 'std': '1.21'}
+Episode time 1.92
+Saved _metrics_
+
+=== Episode 9 ===
+Training on [442/1326] data points
+Ensemble loss -22.67 / Reward Loss 48.94
+Setup recoder @ log_Pendulum-v1_0/videos/9.mp4
+
+=== Collecting data [9] ===
+> Step 25 [reward -322.08]
+Rewards -488.97 / Steps 34.00
+Reward stats:
+ {'max': '-44.42', 'mean': '-101.95', 'min': '-159.35', 'std': '23.53'}
+Information gain stats:
+ {'max': '10.52', 'mean': '3.80', 'min': '-3.08', 'std': '1.46'}
+Episode time 1.94
+Saved _metrics_
+
+=== Episode 10 ===
+Training on [476/1428] data points
+Ensemble loss -24.01 / Reward Loss 33.40
+Setup recoder @ log_Pendulum-v1_0/videos/10.mp4
+
+=== Collecting data [10] ===
+> Step 25 [reward -380.88]
+Rewards -552.28 / Steps 34.00
+Reward stats:
+ {'max': '-90.13', 'mean': '-112.70', 'min': '-155.04', 'std': '8.24'}
+Information gain stats:
+ {'max': '13.03', 'mean': '5.29', 'min': '-1.00', 'std': '1.73'}
+Episode time 1.88
+Saved _metrics_
+
+=== Episode 11 ===
+Training on [510/1530] data points
+Ensemble loss -25.52 / Reward Loss 24.12
+Setup recoder @ log_Pendulum-v1_0/videos/11.mp4
+
+=== Collecting data [11] ===
+> Step 25 [reward -559.03]
+Rewards -757.76 / Steps 34.00
+Reward stats:
+ {'max': '-30.03', 'mean': '-79.35', 'min': '-128.55', 'std': '21.68'}
+Information gain stats:
+ {'max': '18.80', 'mean': '9.30', 'min': '0.36', 'std': '2.77'}
+Episode time 2.02
+Saved _metrics_
+
+=== Episode 12 ===
+Training on [544/1632] data points
+Ensemble loss -23.65 / Reward Loss 18.68
+Setup recoder @ log_Pendulum-v1_0/videos/12.mp4
+
+=== Collecting data [12] ===
+> Step 25 [reward -340.29]
+Rewards -490.11 / Steps 34.00
+Reward stats:
+ {'max': '-19.63', 'mean': '-71.31', 'min': '-129.01', 'std': '27.86'}
+Information gain stats:
+ {'max': '12.13', 'mean': '4.58', 'min': '-2.50', 'std': '1.54'}
+Episode time 2.05
+Saved _metrics_
+
+=== Episode 13 ===
+Training on [578/1734] data points
+Ensemble loss -28.26 / Reward Loss 15.35
+Setup recoder @ log_Pendulum-v1_0/videos/13.mp4
+
+=== Collecting data [13] ===
+> Step 25 [reward -486.13]
+Rewards -698.78 / Steps 34.00
+Reward stats:
+ {'max': '-13.93', 'mean': '-53.03', 'min': '-109.20', 'std': '21.14'}
+Information gain stats:
+ {'max': '23.41', 'mean': '11.53', 'min': '0.06', 'std': '3.13'}
+Episode time 2.07
+Saved _metrics_
+
+=== Episode 14 ===
+Training on [612/1836] data points
+Ensemble loss -23.27 / Reward Loss 13.33
+Setup recoder @ log_Pendulum-v1_0/videos/14.mp4
+
+=== Collecting data [14] ===
+> Step 25 [reward -232.39]
+Rewards -290.51 / Steps 34.00
+Reward stats:
+ {'max': '-12.45', 'mean': '-62.56', 'min': '-121.00', 'std': '27.30'}
+Information gain stats:
+ {'max': '18.47', 'mean': '7.45', 'min': '-0.61', 'std': '2.97'}
+Episode time 2.14
+Saved _metrics_
+
+=== Episode 15 ===
+Training on [646/1938] data points
+Ensemble loss -27.94 / Reward Loss 12.40
+Setup recoder @ log_Pendulum-v1_0/videos/15.mp4
+
+=== Collecting data [15] ===
+> Step 25 [reward -129.50]
+Rewards -129.79 / Steps 34.00
+Reward stats:
+ {'max': '-8.44', 'mean': '-42.53', 'min': '-126.37', 'std': '23.33'}
+Information gain stats:
+ {'max': '13.59', 'mean': '4.56', 'min': '-2.77', 'std': '1.79'}
+Episode time 2.10
+Saved _metrics_
+
+=== Episode 16 ===
+Training on [680/2040] data points
+Ensemble loss -29.78 / Reward Loss 11.30
+Setup recoder @ log_Pendulum-v1_0/videos/16.mp4
+
+=== Collecting data [16] ===
+> Step 25 [reward -123.76]
+Rewards -123.77 / Steps 34.00
+Reward stats:
+ {'max': '-4.81', 'mean': '-33.02', 'min': '-127.28', 'std': '22.81'}
+Information gain stats:
+ {'max': '16.43', 'mean': '4.79', 'min': '-1.37', 'std': '1.59'}
+Episode time 2.17
+Saved _metrics_
+
+=== Episode 17 ===
+Training on [714/2142] data points
+Ensemble loss -30.50 / Reward Loss 10.65
+Setup recoder @ log_Pendulum-v1_0/videos/17.mp4
+
+=== Collecting data [17] ===
+> Step 25 [reward -124.34]
+Rewards -124.39 / Steps 34.00
+Reward stats:
+ {'max': '-0.79', 'mean': '-30.22', 'min': '-134.49', 'std': '27.86'}
+Information gain stats:
+ {'max': '20.30', 'mean': '6.21', 'min': '-1.01', 'std': '2.75'}
+Episode time 2.21
+Saved _metrics_
+
+=== Episode 18 ===
+Training on [748/2244] data points
+Ensemble loss -31.32 / Reward Loss 10.03
+Setup recoder @ log_Pendulum-v1_0/videos/18.mp4
+
+=== Collecting data [18] ===
+> Step 25 [reward -120.71]
+Rewards -120.73 / Steps 34.00
+Reward stats:
+ {'max': '1.34', 'mean': '-25.23', 'min': '-117.01', 'std': '24.42'}
+Information gain stats:
+ {'max': '12.55', 'mean': '5.92', 'min': '-0.64', 'std': '1.64'}
+Episode time 2.19
+Saved _metrics_
+
+=== Episode 19 ===
+Training on [782/2346] data points
+Ensemble loss -31.99 / Reward Loss 9.40
+Setup recoder @ log_Pendulum-v1_0/videos/19.mp4
+
+=== Collecting data [19] ===
+> Step 25 [reward -122.05]
+Rewards -122.11 / Steps 34.00
+Reward stats:
+ {'max': '2.48', 'mean': '-22.17', 'min': '-123.62', 'std': '24.67'}
+Information gain stats:
+ {'max': '13.29', 'mean': '6.09', 'min': '-2.36', 'std': '1.75'}
+Episode time 2.27
+Saved _metrics_
+
+=== Episode 20 ===
+Training on [816/2448] data points
+Ensemble loss -33.09 / Reward Loss 8.86
+Setup recoder @ log_Pendulum-v1_0/videos/20.mp4
+
+=== Collecting data [20] ===
+> Step 25 [reward -114.10]
+Rewards -114.12 / Steps 34.00
+Reward stats:
+ {'max': '1.76', 'mean': '-16.69', 'min': '-120.35', 'std': '20.94'}
+Information gain stats:
+ {'max': '13.91', 'mean': '6.42', 'min': '-1.34', 'std': '1.76'}
+Episode time 2.31
+Saved _metrics_
+
+=== Episode 21 ===
+Training on [850/2550] data points
+Ensemble loss -34.51 / Reward Loss 8.36
+Setup recoder @ log_Pendulum-v1_0/videos/21.mp4
+
+=== Collecting data [21] ===
+> Step 25 [reward -118.63]
+Rewards -118.65 / Steps 34.00
+Reward stats:
+ {'max': '1.04', 'mean': '-18.10', 'min': '-113.40', 'std': '23.97'}
+Information gain stats:
+ {'max': '13.32', 'mean': '6.58', 'min': '-0.99', 'std': '1.76'}
+Episode time 2.32
+Saved _metrics_
+
+=== Episode 22 ===
+Training on [884/2652] data points
+Ensemble loss -36.55 / Reward Loss 7.89
+Setup recoder @ log_Pendulum-v1_0/videos/22.mp4
+
+=== Collecting data [22] ===
+> Step 25 [reward -117.27]
+Rewards -117.30 / Steps 34.00
+Reward stats:
+ {'max': '1.86', 'mean': '-15.62', 'min': '-121.05', 'std': '23.68'}
+Information gain stats:
+ {'max': '13.77', 'mean': '6.48', 'min': '-2.10', 'std': '1.72'}
+Episode time 2.33
+Saved _metrics_
+
+=== Episode 23 ===
+Training on [918/2754] data points
+Ensemble loss -38.66 / Reward Loss 7.51
+Setup recoder @ log_Pendulum-v1_0/videos/23.mp4
+
+=== Collecting data [23] ===
+> Step 25 [reward -226.47]
+Rewards -226.49 / Steps 34.00
+Reward stats:
+ {'max': '1.33', 'mean': '-29.33', 'min': '-134.68', 'std': '38.72'}
+Information gain stats:
+ {'max': '13.71', 'mean': '5.67', 'min': '-1.48', 'std': '1.79'}
+Episode time 2.40
+Saved _metrics_
+
+=== Episode 24 ===
+Training on [952/2856] data points
+Ensemble loss -40.22 / Reward Loss 7.21
+Setup recoder @ log_Pendulum-v1_0/videos/24.mp4
+
+=== Collecting data [24] ===
+> Step 25 [reward -249.59]
+Rewards -249.62 / Steps 34.00
+Reward stats:
+ {'max': '0.81', 'mean': '-34.41', 'min': '-124.04', 'std': '37.13'}
+Information gain stats:
+ {'max': '16.08', 'mean': '5.83', 'min': '-1.52', 'std': '2.12'}
+Episode time 2.44
+Saved _metrics_
+
+=== Episode 25 ===
+Training on [986/2958] data points
+Ensemble loss -41.59 / Reward Loss 6.93
+Setup recoder @ log_Pendulum-v1_0/videos/25.mp4
+
+=== Collecting data [25] ===
+> Step 25 [reward -243.28]
+Rewards -243.31 / Steps 34.00
+Reward stats:
+ {'max': '-0.01', 'mean': '-33.21', 'min': '-127.96', 'std': '36.13'}
+Information gain stats:
+ {'max': '18.80', 'mean': '5.54', 'min': '-2.05', 'std': '2.29'}
+Episode time 2.46
+Saved _metrics_
+
+=== Episode 26 ===
+Training on [1020/3060] data points
+Ensemble loss -42.45 / Reward Loss 6.66
+Setup recoder @ log_Pendulum-v1_0/videos/26.mp4
+
+=== Collecting data [26] ===
+> Step 25 [reward -115.77]
+Rewards -115.77 / Steps 34.00
+Reward stats:
+ {'max': '0.30', 'mean': '-15.09', 'min': '-114.31', 'std': '22.71'}
+Information gain stats:
+ {'max': '14.73', 'mean': '5.18', 'min': '-1.01', 'std': '1.69'}
+Episode time 2.49
+Saved _metrics_
+
+=== Episode 27 ===
+Training on [1054/3162] data points
+Ensemble loss -43.07 / Reward Loss 6.37
+Setup recoder @ log_Pendulum-v1_0/videos/27.mp4
+
+=== Collecting data [27] ===
+> Step 25 [reward -239.84]
+Rewards -239.89 / Steps 34.00
+Reward stats:
+ {'max': '-0.49', 'mean': '-32.74', 'min': '-130.76', 'std': '37.02'}
+Information gain stats:
+ {'max': '19.57', 'mean': '5.34', 'min': '-1.91', 'std': '2.29'}
+Episode time 2.55
+Saved _metrics_
+
+=== Episode 28 ===
+Training on [1088/3264] data points
+Ensemble loss -43.52 / Reward Loss 6.15
+Setup recoder @ log_Pendulum-v1_0/videos/28.mp4
+
+=== Collecting data [28] ===
+> Step 25 [reward -118.68]
+Rewards -118.69 / Steps 34.00
+Reward stats:
+ {'max': '0.45', 'mean': '-16.93', 'min': '-112.86', 'std': '25.65'}
+Information gain stats:
+ {'max': '14.35', 'mean': '5.36', 'min': '-1.30', 'std': '1.69'}
+Episode time 2.54
+Saved _metrics_
+
+=== Episode 29 ===
+Training on [1122/3366] data points
+Ensemble loss -43.83 / Reward Loss 5.88
+Setup recoder @ log_Pendulum-v1_0/videos/29.mp4
+
+=== Collecting data [29] ===
+> Step 25 [reward -123.64]
+Rewards -123.66 / Steps 34.00
+Reward stats:
+ {'max': '0.03', 'mean': '-18.64', 'min': '-113.04', 'std': '28.31'}
+Information gain stats:
+ {'max': '13.89', 'mean': '5.30', 'min': '-1.15', 'std': '1.60'}
+Episode time 2.61
+Saved _metrics_
+
+=== Episode 30 ===
+Training on [1156/3468] data points
+Ensemble loss -44.13 / Reward Loss 5.65
+Setup recoder @ log_Pendulum-v1_0/videos/30.mp4
+
+=== Collecting data [30] ===
+> Step 25 [reward -246.67]
+Rewards -246.70 / Steps 34.00
+Reward stats:
+ {'max': '-0.03', 'mean': '-33.34', 'min': '-132.92', 'std': '38.21'}
+Information gain stats:
+ {'max': '19.25', 'mean': '5.10', 'min': '-2.33', 'std': '2.40'}
+Episode time 2.65
+Saved _metrics_
+
+=== Episode 31 ===
+Training on [1190/3570] data points
+Ensemble loss -44.32 / Reward Loss 5.48
+Setup recoder @ log_Pendulum-v1_0/videos/31.mp4
+
+=== Collecting data [31] ===
+> Step 25 [reward -117.33]
+Rewards -117.36 / Steps 34.00
+Reward stats:
+ {'max': '0.25', 'mean': '-16.16', 'min': '-112.46', 'std': '24.20'}
+Information gain stats:
+ {'max': '21.21', 'mean': '5.50', 'min': '-1.92', 'std': '2.27'}
+Episode time 2.64
+Saved _metrics_
+
+=== Episode 32 ===
+Training on [1224/3672] data points
+Ensemble loss -44.51 / Reward Loss 5.20
+Setup recoder @ log_Pendulum-v1_0/videos/32.mp4
+
+=== Collecting data [32] ===
+> Step 25 [reward -124.00]
+Rewards -124.01 / Steps 34.00
+Reward stats:
+ {'max': '0.36', 'mean': '-19.99', 'min': '-117.40', 'std': '29.82'}
+Information gain stats:
+ {'max': '20.30', 'mean': '5.58', 'min': '-1.88', 'std': '2.47'}
+Episode time 2.71
+Saved _metrics_
+
+=== Episode 33 ===
+Training on [1258/3774] data points
+Ensemble loss -44.70 / Reward Loss 5.04
+Setup recoder @ log_Pendulum-v1_0/videos/33.mp4
+
+=== Collecting data [33] ===
+> Step 25 [reward -241.01]
+Rewards -241.02 / Steps 34.00
+Reward stats:
+ {'max': '0.43', 'mean': '-31.29', 'min': '-131.91', 'std': '37.79'}
+Information gain stats:
+ {'max': '12.02', 'mean': '5.07', 'min': '-2.92', 'std': '1.65'}
+Episode time 2.74
+Saved _metrics_
+
+=== Episode 34 ===
+Training on [1292/3876] data points
+Ensemble loss -44.86 / Reward Loss 4.88
+Setup recoder @ log_Pendulum-v1_0/videos/34.mp4
+
+=== Collecting data [34] ===
+> Step 25 [reward -118.22]
+Rewards -118.23 / Steps 34.00
+Reward stats:
+ {'max': '0.74', 'mean': '-16.33', 'min': '-118.09', 'std': '24.66'}
+Information gain stats:
+ {'max': '20.46', 'mean': '5.44', 'min': '-2.00', 'std': '2.12'}
+Episode time 2.76
+Saved _metrics_
+
+=== Episode 35 ===
+Training on [1326/3978] data points
+Ensemble loss -45.00 / Reward Loss 4.73
+Setup recoder @ log_Pendulum-v1_0/videos/35.mp4
+
+=== Collecting data [35] ===
+> Step 25 [reward -120.67]
+Rewards -120.71 / Steps 34.00
+Reward stats:
+ {'max': '1.17', 'mean': '-16.98', 'min': '-113.52', 'std': '25.91'}
+Information gain stats:
+ {'max': '19.26', 'mean': '5.54', 'min': '-2.02', 'std': '2.25'}
+Episode time 2.82
+Saved _metrics_
+
+=== Episode 36 ===
+Training on [1360/4080] data points
+Ensemble loss -45.11 / Reward Loss 4.56
+Setup recoder @ log_Pendulum-v1_0/videos/36.mp4
+
+=== Collecting data [36] ===
+> Step 25 [reward -125.54]
+Rewards -125.55 / Steps 34.00
+Reward stats:
+ {'max': '0.68', 'mean': '-22.66', 'min': '-119.22', 'std': '32.73'}
+Information gain stats:
+ {'max': '25.93', 'mean': '5.63', 'min': '-1.19', 'std': '2.45'}
+Episode time 2.86
+Saved _metrics_
+
+=== Episode 37 ===
+Training on [1394/4182] data points
+Ensemble loss -45.22 / Reward Loss 4.42
+Setup recoder @ log_Pendulum-v1_0/videos/37.mp4
+
+=== Collecting data [37] ===
+> Step 25 [reward -237.87]
+Rewards -237.90 / Steps 34.00
+Reward stats:
+ {'max': '1.03', 'mean': '-33.18', 'min': '-126.86', 'std': '36.42'}
+Information gain stats:
+ {'max': '23.47', 'mean': '5.41', 'min': '-1.48', 'std': '2.56'}
+Episode time 2.85
+Saved _metrics_
+
+=== Episode 38 ===
+Training on [1428/4284] data points
+Ensemble loss -45.33 / Reward Loss 4.28
+Setup recoder @ log_Pendulum-v1_0/videos/38.mp4
+
+=== Collecting data [38] ===
+> Step 25 [reward -118.26]
+Rewards -118.28 / Steps 34.00
+Reward stats:
+ {'max': '0.90', 'mean': '-16.33', 'min': '-114.88', 'std': '25.31'}
+Information gain stats:
+ {'max': '20.81', 'mean': '5.57', 'min': '-1.73', 'std': '2.26'}
+Episode time 2.91
+Saved _metrics_
+
+=== Episode 39 ===
+Training on [1462/4386] data points
+Ensemble loss -45.45 / Reward Loss 4.18
+Setup recoder @ log_Pendulum-v1_0/videos/39.mp4
+
+=== Collecting data [39] ===
+> Step 25 [reward -125.89]
+Rewards -125.91 / Steps 34.00
+Reward stats:
+ {'max': '1.02', 'mean': '-23.53', 'min': '-116.40', 'std': '32.69'}
+Information gain stats:
+ {'max': '18.58', 'mean': '5.59', 'min': '-0.93', 'std': '2.06'}
+Episode time 2.96
+Saved _metrics_
+
+=== Episode 40 ===
+Training on [1496/4488] data points
+Ensemble loss -45.56 / Reward Loss 4.07
+Setup recoder @ log_Pendulum-v1_0/videos/40.mp4
+
+=== Collecting data [40] ===
+> Step 25 [reward -1.02]
+Rewards -1.05 / Steps 34.00
+Reward stats:
+ {'max': '1.31', 'mean': '-8.12', 'min': '-101.52', 'std': '11.62'}
+Information gain stats:
+ {'max': '12.22', 'mean': '5.15', 'min': '-1.52', 'std': '1.52'}
+Episode time 2.92
+Saved _metrics_
+
+=== Episode 41 ===
+Training on [1530/4590] data points
+Ensemble loss -45.66 / Reward Loss 3.93
+Setup recoder @ log_Pendulum-v1_0/videos/41.mp4
+
+=== Collecting data [41] ===
+> Step 25 [reward -2.36]
+Rewards -2.42 / Steps 34.00
+Reward stats:
+ {'max': '0.99', 'mean': '-8.86', 'min': '-107.83', 'std': '12.99'}
+Information gain stats:
+ {'max': '15.11', 'mean': '5.07', 'min': '-1.77', 'std': '1.50'}
+Episode time 2.99
+Saved _metrics_
+
+=== Episode 42 ===
+Training on [1564/4692] data points
+Ensemble loss -45.76 / Reward Loss 3.84
+Setup recoder @ log_Pendulum-v1_0/videos/42.mp4
+
+=== Collecting data [42] ===
+> Step 25 [reward -238.81]
+Rewards -238.83 / Steps 34.00
+Reward stats:
+ {'max': '0.99', 'mean': '-31.52', 'min': '-133.19', 'std': '37.50'}
+Information gain stats:
+ {'max': '19.58', 'mean': '5.17', 'min': '-1.87', 'std': '2.47'}
+Episode time 3.03
+Saved _metrics_
+
+=== Episode 43 ===
+Training on [1598/4794] data points
+Ensemble loss -45.87 / Reward Loss 3.76
+Setup recoder @ log_Pendulum-v1_0/videos/43.mp4
+
+=== Collecting data [43] ===
+> Step 25 [reward -116.90]
+Rewards -116.94 / Steps 34.00
+Reward stats:
+ {'max': '1.62', 'mean': '-15.18', 'min': '-120.21', 'std': '24.12'}
+Information gain stats:
+ {'max': '18.10', 'mean': '5.41', 'min': '-2.00', 'std': '2.02'}
+Episode time 3.03
+Saved _metrics_
+
+=== Episode 44 ===
+Training on [1632/4896] data points
+Ensemble loss -45.92 / Reward Loss 3.64
+Setup recoder @ log_Pendulum-v1_0/videos/44.mp4
+
+=== Collecting data [44] ===
+> Step 25 [reward -119.18]
+Rewards -119.23 / Steps 34.00
+Reward stats:
+ {'max': '1.28', 'mean': '-15.94', 'min': '-111.58', 'std': '25.63'}
+Information gain stats:
+ {'max': '19.29', 'mean': '5.54', 'min': '-1.30', 'std': '2.30'}
+Episode time 3.10
+Saved _metrics_
+
+=== Episode 45 ===
+Training on [1666/4998] data points
+Ensemble loss -45.98 / Reward Loss 3.57
+Setup recoder @ log_Pendulum-v1_0/videos/45.mp4
+
+=== Collecting data [45] ===
+> Step 25 [reward -296.07]
+Rewards -296.10 / Steps 34.00
+Reward stats:
+ {'max': '1.85', 'mean': '-37.79', 'min': '-136.28', 'std': '43.31'}
+Information gain stats:
+ {'max': '18.76', 'mean': '4.99', 'min': '-2.30', 'std': '2.46'}
+Episode time 3.16
+Saved _metrics_
+
+=== Episode 46 ===
+Training on [1700/5100] data points
+Ensemble loss -46.07 / Reward Loss 3.50
+Setup recoder @ log_Pendulum-v1_0/videos/46.mp4
+
+=== Collecting data [46] ===
+> Step 25 [reward -118.87]
+Rewards -118.89 / Steps 34.00
+Reward stats:
+ {'max': '0.81', 'mean': '-15.96', 'min': '-111.93', 'std': '25.37'}
+Information gain stats:
+ {'max': '18.90', 'mean': '5.48', 'min': '-2.23', 'std': '2.19'}
+Episode time 3.18
+Saved _metrics_
+
+=== Episode 47 ===
+Training on [1734/5202] data points
+Ensemble loss -46.12 / Reward Loss 3.42
+Setup recoder @ log_Pendulum-v1_0/videos/47.mp4
+
+=== Collecting data [47] ===
+> Step 25 [reward -119.70]
+Rewards -119.71 / Steps 34.00
+Reward stats:
+ {'max': '1.11', 'mean': '-16.57', 'min': '-115.37', 'std': '26.66'}
+Information gain stats:
+ {'max': '19.15', 'mean': '5.60', 'min': '-1.66', 'std': '2.27'}
+Episode time 3.21
+Saved _metrics_
+
+=== Episode 48 ===
+Training on [1768/5304] data points
+Ensemble loss -46.20 / Reward Loss 3.34
+Setup recoder @ log_Pendulum-v1_0/videos/48.mp4
+
+=== Collecting data [48] ===
+> Step 25 [reward -113.68]
+Rewards -113.69 / Steps 34.00
+Reward stats:
+ {'max': '1.72', 'mean': '-14.07', 'min': '-123.73', 'std': '22.81'}
+Information gain stats:
+ {'max': '16.56', 'mean': '5.33', 'min': '-1.31', 'std': '1.94'}
+Episode time 3.26
+Saved _metrics_
+
+=== Episode 49 ===
+Training on [1802/5406] data points
+Ensemble loss -46.25 / Reward Loss 3.26
+Setup recoder @ log_Pendulum-v1_0/videos/49.mp4
+
+=== Collecting data [49] ===
+> Step 25 [reward -123.43]
+Rewards -123.46 / Steps 34.00
+Reward stats:
+ {'max': '1.33', 'mean': '-18.49', 'min': '-115.19', 'std': '29.76'}
+Information gain stats:
+ {'max': '18.89', 'mean': '5.45', 'min': '-1.36', 'std': '2.07'}
+Episode time 3.30
+Saved _metrics_
+
+=== Episode 50 ===
+Training on [1836/5508] data points
+Ensemble loss -46.32 / Reward Loss 3.19
+Setup recoder @ log_Pendulum-v1_0/videos/50.mp4
+
+=== Collecting data [50] ===
+> Step 25 [reward -227.14]
+Rewards -227.16 / Steps 34.00
+Reward stats:
+ {'max': '2.59', 'mean': '-28.18', 'min': '-137.26', 'std': '37.57'}
+Information gain stats:
+ {'max': '12.10', 'mean': '4.77', 'min': '-2.02', 'std': '1.58'}
+Episode time 3.32
+Saved _metrics_
+
+=== Episode 51 ===
+Training on [1870/5610] data points
+Ensemble loss -46.37 / Reward Loss 3.13
+Setup recoder @ log_Pendulum-v1_0/videos/51.mp4
+
+=== Collecting data [51] ===
+> Step 25 [reward -237.86]
+Rewards -237.87 / Steps 34.00
+Reward stats:
+ {'max': '1.44', 'mean': '-30.43', 'min': '-133.57', 'std': '36.93'}
+Information gain stats:
+ {'max': '18.35', 'mean': '5.18', 'min': '-3.08', 'std': '2.41'}
+Episode time 3.36
+Saved _metrics_
+
+=== Episode 52 ===
+Training on [1904/5712] data points
+Ensemble loss -46.46 / Reward Loss 3.06
+Setup recoder @ log_Pendulum-v1_0/videos/52.mp4
+
+=== Collecting data [52] ===
+> Step 25 [reward -291.00]
+Rewards -291.02 / Steps 34.00
+Reward stats:
+ {'max': '1.41', 'mean': '-36.61', 'min': '-136.65', 'std': '42.67'}
+Information gain stats:
+ {'max': '18.51', 'mean': '4.94', 'min': '-2.39', 'std': '2.42'}
+Episode time 3.39
+Saved _metrics_
+
+=== Episode 53 ===
+Training on [1938/5814] data points
+Ensemble loss -46.48 / Reward Loss 3.01
+Setup recoder @ log_Pendulum-v1_0/videos/53.mp4
+
+=== Collecting data [53] ===
+> Step 25 [reward -125.39]
+Rewards -125.42 / Steps 34.00
+Reward stats:
+ {'max': '1.36', 'mean': '-21.12', 'min': '-118.36', 'std': '32.38'}
+Information gain stats:
+ {'max': '20.18', 'mean': '5.51', 'min': '-1.77', 'std': '2.24'}
+Episode time 3.36
+Saved _metrics_
+
+=== Episode 54 ===
+Training on [1972/5916] data points
+Ensemble loss -46.54 / Reward Loss 2.95
+Setup recoder @ log_Pendulum-v1_0/videos/54.mp4
+
+=== Collecting data [54] ===
+> Step 25 [reward -241.31]
+Rewards -241.33 / Steps 34.00
+Reward stats:
+ {'max': '1.30', 'mean': '-30.79', 'min': '-136.60', 'std': '38.18'}
+Information gain stats:
+ {'max': '16.84', 'mean': '5.04', 'min': '-2.33', 'std': '2.32'}
+Episode time 3.42
+Saved _metrics_
+
+=== Episode 55 ===
+Training on [2006/6018] data points
+Ensemble loss -46.58 / Reward Loss 2.88
+Setup recoder @ log_Pendulum-v1_0/videos/55.mp4
+
+=== Collecting data [55] ===
+> Step 25 [reward -115.05]
+Rewards -115.06 / Steps 34.00
+Reward stats:
+ {'max': '1.22', 'mean': '-14.35', 'min': '-119.81', 'std': '23.54'}
+Information gain stats:
+ {'max': '15.56', 'mean': '5.19', 'min': '-1.52', 'std': '1.82'}
+Episode time 3.46
+Saved _metrics_
+
+=== Episode 56 ===
+Training on [2040/6120] data points
+Ensemble loss -46.63 / Reward Loss 2.82
+Setup recoder @ log_Pendulum-v1_0/videos/56.mp4
+
+=== Collecting data [56] ===
+> Step 25 [reward -2.45]
+Rewards -2.46 / Steps 34.00
+Reward stats:
+ {'max': '1.07', 'mean': '-7.42', 'min': '-108.24', 'std': '10.85'}
+Information gain stats:
+ {'max': '13.35', 'mean': '4.99', 'min': '-1.80', 'std': '1.52'}
+Episode time 3.61
+Saved _metrics_
+
+=== Episode 57 ===
+Training on [2074/6222] data points
+Ensemble loss -46.68 / Reward Loss 2.78
+Setup recoder @ log_Pendulum-v1_0/videos/57.mp4
+
+=== Collecting data [57] ===
+> Step 25 [reward -119.48]
+Rewards -119.49 / Steps 34.00
+Reward stats:
+ {'max': '1.19', 'mean': '-15.71', 'min': '-111.92', 'std': '26.00'}
+Information gain stats:
+ {'max': '18.48', 'mean': '5.45', 'min': '-1.08', 'std': '2.20'}
+Episode time 3.57
+Saved _metrics_
+
+=== Episode 58 ===
+Training on [2108/6324] data points
+Ensemble loss -46.70 / Reward Loss 2.71
+Setup recoder @ log_Pendulum-v1_0/videos/58.mp4
+
+=== Collecting data [58] ===
+> Step 25 [reward -116.26]
+Rewards -116.28 / Steps 34.00
+Reward stats:
+ {'max': '1.57', 'mean': '-13.60', 'min': '-110.29', 'std': '23.31'}
+Information gain stats:
+ {'max': '13.28', 'mean': '5.01', 'min': '-1.51', 'std': '1.57'}
+Episode time 3.58
+Saved _metrics_
+
+=== Episode 59 ===
+Training on [2142/6426] data points
+Ensemble loss -46.75 / Reward Loss 2.66
+Setup recoder @ log_Pendulum-v1_0/videos/59.mp4
+
+=== Collecting data [59] ===
+> Step 25 [reward -114.78]
+Rewards -114.79 / Steps 34.00
+Reward stats:
+ {'max': '1.38', 'mean': '-13.86', 'min': '-125.40', 'std': '23.55'}
+Information gain stats:
+ {'max': '12.86', 'mean': '4.80', 'min': '-1.80', 'std': '1.52'}
+Episode time 3.55
+Saved _metrics_
+
+=== Episode 60 ===
+Training on [2176/6528] data points
+Ensemble loss -46.81 / Reward Loss 2.61
+Setup recoder @ log_Pendulum-v1_0/videos/60.mp4
+
+=== Collecting data [60] ===
+> Step 25 [reward -120.83]
+Rewards -120.84 / Steps 34.00
+Reward stats:
+ {'max': '1.20', 'mean': '-15.86', 'min': '-113.05', 'std': '26.74'}
+Information gain stats:
+ {'max': '16.19', 'mean': '5.20', 'min': '-2.04', 'std': '1.85'}
+Episode time 3.61
+Saved _metrics_
+
+=== Episode 61 ===
+Training on [2210/6630] data points
+Ensemble loss -46.88 / Reward Loss 2.56
+Setup recoder @ log_Pendulum-v1_0/videos/61.mp4
+
+=== Collecting data [61] ===
+> Step 25 [reward -123.29]
+Rewards -123.31 / Steps 34.00
+Reward stats:
+ {'max': '0.84', 'mean': '-16.89', 'min': '-114.15', 'std': '28.22'}
+Information gain stats:
+ {'max': '15.88', 'mean': '4.92', 'min': '-1.68', 'std': '1.53'}
+Episode time 3.69
+Saved _metrics_
+
+=== Episode 62 ===
+Training on [2244/6732] data points
+Ensemble loss -46.92 / Reward Loss 2.52
+Setup recoder @ log_Pendulum-v1_0/videos/62.mp4
+
+=== Collecting data [62] ===
+> Step 25 [reward -120.46]
+Rewards -120.49 / Steps 34.00
+Reward stats:
+ {'max': '1.18', 'mean': '-15.29', 'min': '-114.65', 'std': '26.30'}
+Information gain stats:
+ {'max': '19.10', 'mean': '5.53', 'min': '-2.20', 'std': '2.38'}
+Episode time 3.72
+Saved _metrics_
+
+=== Episode 63 ===
+Training on [2278/6834] data points
+Ensemble loss -46.96 / Reward Loss 2.45
+Setup recoder @ log_Pendulum-v1_0/videos/63.mp4
+
+=== Collecting data [63] ===
+> Step 25 [reward -125.65]
+Rewards -125.66 / Steps 34.00
+Reward stats:
+ {'max': '1.14', 'mean': '-21.79', 'min': '-124.34', 'std': '32.93'}
+Information gain stats:
+ {'max': '21.81', 'mean': '5.59', 'min': '-1.46', 'std': '2.28'}
+Episode time 3.74
+Saved _metrics_
+
+=== Episode 64 ===
+Training on [2312/6936] data points
+Ensemble loss -46.98 / Reward Loss 2.43
+Setup recoder @ log_Pendulum-v1_0/videos/64.mp4
+
+=== Collecting data [64] ===
+> Step 25 [reward -117.21]
+Rewards -117.22 / Steps 34.00
+Reward stats:
+ {'max': '1.38', 'mean': '-14.15', 'min': '-112.50', 'std': '24.43'}
+Information gain stats:
+ {'max': '16.02', 'mean': '5.24', 'min': '-1.62', 'std': '1.94'}
+Episode time 3.80
+Saved _metrics_
+
+=== Episode 65 ===
+Training on [2346/7038] data points
+Ensemble loss -47.00 / Reward Loss 2.38
+Setup recoder @ log_Pendulum-v1_0/videos/65.mp4
+
+=== Collecting data [65] ===
+> Step 25 [reward -233.31]
+Rewards -233.33 / Steps 34.00
+Reward stats:
+ {'max': '1.35', 'mean': '-30.07', 'min': '-137.24', 'std': '38.11'}
+Information gain stats:
+ {'max': '17.35', 'mean': '5.00', 'min': '-2.76', 'std': '2.29'}
+Episode time 3.83
+Saved _metrics_
+
+=== Episode 66 ===
+Training on [2380/7140] data points
+Ensemble loss -47.04 / Reward Loss 2.34
+Setup recoder @ log_Pendulum-v1_0/videos/66.mp4
+
+=== Collecting data [66] ===
+> Step 25 [reward -121.47]
+Rewards -121.49 / Steps 34.00
+Reward stats:
+ {'max': '1.77', 'mean': '-15.44', 'min': '-116.96', 'std': '26.80'}
+Information gain stats:
+ {'max': '12.18', 'mean': '4.79', 'min': '-2.66', 'std': '1.48'}
+Episode time 3.86
+Saved _metrics_
+
+=== Episode 67 ===
+Training on [2414/7242] data points
+Ensemble loss -47.10 / Reward Loss 2.31
+Setup recoder @ log_Pendulum-v1_0/videos/67.mp4
+
+=== Collecting data [67] ===
+> Step 25 [reward -120.29]
+Rewards -120.30 / Steps 34.00
+Reward stats:
+ {'max': '1.60', 'mean': '-15.17', 'min': '-112.97', 'std': '26.49'}
+Information gain stats:
+ {'max': '14.97', 'mean': '5.10', 'min': '-2.11', 'std': '1.77'}
+Episode time 3.90
+Saved _metrics_
+
+=== Episode 68 ===
+Training on [2448/7344] data points
+Ensemble loss -47.15 / Reward Loss 2.26
+Setup recoder @ log_Pendulum-v1_0/videos/68.mp4
+
+=== Collecting data [68] ===
+> Step 25 [reward -128.16]
+Rewards -128.19 / Steps 34.00
+Reward stats:
+ {'max': '1.02', 'mean': '-25.29', 'min': '-119.01', 'std': '35.27'}
+Information gain stats:
+ {'max': '16.92', 'mean': '5.26', 'min': '-1.81', 'std': '1.91'}
+Episode time 3.86
+Saved _metrics_
+
+=== Episode 69 ===
+Training on [2482/7446] data points
+Ensemble loss -47.18 / Reward Loss 2.23
+Setup recoder @ log_Pendulum-v1_0/videos/69.mp4
+
+=== Collecting data [69] ===
+> Step 25 [reward -0.18]
+Rewards -0.18 / Steps 34.00
+Reward stats:
+ {'max': '1.21', 'mean': '-5.95', 'min': '-80.86', 'std': '8.54'}
+Information gain stats:
+ {'max': '12.82', 'mean': '4.80', 'min': '-1.97', 'std': '1.49'}
+Episode time 3.92
+Saved _metrics_

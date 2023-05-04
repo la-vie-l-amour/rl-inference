@@ -107,7 +107,7 @@ class Planner(nn.Module):
 
         return action_mean[0].squeeze(dim=0)
 
-    # 执行 plan_horizon 个时间
+    # 执行 plan_horizon 个时间. MPC(Model predictive control)
     def perform_rollout(self, current_state, actions):
         T = self.plan_horizon + 1
         # states = [tensor([]), tensor([]), ...]共T个tensor([])
@@ -136,6 +136,7 @@ class Planner(nn.Module):
         delta_means = torch.stack(delta_means[1:], dim=0)
         return states, delta_vars, delta_means
 
+    # CEM
     def _fit_gaussian(self, actions, returns):
         returns = torch.where(torch.isnan(returns), torch.zeros_like(returns), returns)
         _, topk = returns.topk(self.top_candidates, dim=0, largest=True, sorted=False)

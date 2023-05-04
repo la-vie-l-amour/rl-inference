@@ -1,7 +1,6 @@
 import gym
 import numpy as np
 
-
 class Pendulum:
 
     metadata = {"render.modes": ["human", "rgb_array"]}

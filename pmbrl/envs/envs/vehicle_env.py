@@ -12,11 +12,10 @@ Delay: 用户的delay可以设置为随机产生或者按照泊松分布产生�
 
 '''
 
-
 import numpy as np
-import gymnasium as gym
-import math
 import random
+import torch
+import torch.nn.functional as F
 
 #计算reward 的超参
 tau = 10
@@ -33,33 +32,24 @@ b = 5
 MEC = [i for i in range(4, 13, 2)]
 SE = [1, 3]
 
-
-def random_pick(some_list, probability):
-    x = random.uniform(0, 1)
-    cprobability = 0.0
-    global item
-    for item, item_probability in zip(some_list, probability):
-        cprobability += item_probability
-        if x < cprobability:
-            break
-    return item
-
-class env(object):
+class Vehicle(object):
     def __init__(self):
-        self.reset()
-        self.BS_list = [BaseStation(self.state[0][1],self.state[0][0]),
-                        BaseStation(self.state[1][1],self.state[1][0]),
-                        BaseStation(self.state[2][1],self.state[2][0]),
-                        BaseStation(self.state[3][1],self.state[3][0]),
-                        BaseStation(self.state[4][1],self.state[4][0])]
 
         self.count_step = 0
+        self.n_actions = 5
 
     def reset(self):
+        self.count_step = 1
         self.state = np.zeros(shape=(5,2))
         for i in range(5):
-            self.state[0][i] = random.choice(MEC)
-            self.state[1][i] = random.choice(SE)
+            self.state[i][0] = random.choice(MEC)
+            self.state[i][1] = random.choice(SE)
+        self.BS_list = [BaseStation(self.state[0][0], self.state[0][1]),
+                        BaseStation(self.state[1][0], self.state[1][1]),
+                        BaseStation(self.state[2][0], self.state[2][1]),
+                        BaseStation(self.state[3][0], self.state[3][1]),
+                        BaseStation(self.state[4][0], self.state[4][1])]
+
         return self.state.reshape(-1)
 
     @property
@@ -69,65 +59,70 @@ class env(object):
 
     @property
     def action_space(self):
-        action  = gym.spaces.Discrete(5)
-        # action = np.zeros(5)
+        action = np.zeros(5)
         return action
 
-    def step(self, input_actions):
-
-        index = int(input_actions)
-
+    def step(self, action):
+        index = self.decode_vector(action)
         bs = self.BS_list[index]
 
         # 用户和BS相互映射，这里是每走一步就要进行一下任务卸载，这里的time要根据泊松分布来设置，
-        oUser = OtherUser(bs, time = int(np.random.poisson(1,1)))
+        # oUser = OtherUser(bs, time = int(np.random.poisson(1,1)))
+        oUser = OtherUser(bs, time = random.randint(10,30)) # 在10~30(都包含)里随机生成
+
         bs.add_user(oUser)
 
         # 计算reward
         reward = self.caculate_Reward(bs)
 
-
         # all BS user rest_time update。所有bs中的所有用户都-1，因为是虚拟并行操作。可以想成在一秒钟内，所有基站对用户请求都处理了一次，并行执行
         for _bs in self.BS_list:
             for user in list(_bs.users.values()):
-                ti = user.time_step()
-                if ti == 0:
-                    _bs.remove_user(user)
+                user.time_step()
 
         # state transition
         for bs in self.BS_list:
             bs.tran_state1()
             bs.tran_state2()
 
-
         # next_state
         for i in range(5):
-            self.state[0][i] = self.BS_list[i].mec
-            self.state[1][i] = self.BS_list[i].se
+            self.state[i][0] = self.BS_list[i].mec
+            self.state[i][1] = self.BS_list[i].se
 
-        # 如果运行一定步数，done
         done = False
-        self.count_step += 1
-        if self.count_step >10000:
-            done = True
 
         return self.state.reshape(-1), reward, done, {}
 
 
+    def sample_action(self):
+        indx = random.randint(0, self.n_actions - 1)
+        return self.encode_vector(indx, self.n_actions)
+
+    def close(self):
+        pass
+    def render(self):
+        pass
     def caculate_Reward(self, bs):
-        reward =  (tau * bs.se * b*(1-w ) - deta * b)+ ((fai* bs.mec * o)/q - eta * q * e)
+        reward =  (tau * bs.se * b*(1- w) - deta * b)+ ((fai* bs.mec * o)/(q * eta * q * e))
         return reward
 
-    def check_time_up(self,queueing_time):
-        return True if queueing_time < 1 else False
+    def encode_vector(self, index, dim):
+        vector_encoded = np.random.rand(dim)  #
+        vector_encoded[index] = 1
+        return vector_encoded
+    def decode_vector(self,vector_decoded):
+        vector_decoded_softmax = F.softmax(torch.tensor(vector_decoded), dim=0)
+        index = torch.argmax(vector_decoded_softmax, dim=0).item()
+        return index
 
 
 class BaseStation(object):
-    def __init__(self, se, mec):
+    def __init__(self, mec, se):
         self.users = {}
         self.user_id = 0
-        self.se = se       # the spectrum efficiency
-        self.mec = mec    #基站mec的值
+        self.se = int(se)       # the spectrum efficiency
+        self.mec = int(mec)    #基站mec的值
         self.ve = 0
 
     def add_user(self, user):
@@ -140,29 +135,44 @@ class BaseStation(object):
         self.ve = self.ve - 1
         del self.users[user.id]
 
-
     def tran_state1(self):
         if self.mec == 4:
             self.mec = random_pick(MEC, [0.5, 0.25, 0.125, 0.0625, 0.0625])
+            return
         elif self.mec == 6:
             self.mec = random_pick(MEC, [0.0625, 0.5, 0.25, 0.125, 0.0625])
+            return
         elif self.mec == 8:
             self.mec = random_pick(MEC, [0.0625, 0.0625, 0.5, 0.25, 0.125])
+            return
         elif self.mec == 10:
             self.mec = random_pick(MEC, [0.125, 0.0625, 0.0625, 0.5, 0.25])
+            return
         elif self.mec == 12:
             self.mec = random_pick(MEC, [0.25, 0.125, 0.0625, 0.0625, 0.5])
+            return
         else:
             raise ValueError('Input MEC error!')
 
     def tran_state2(self):
         if self.se == 1:
-            self.se = random_pick([1,3],[0.7, 0.3])
+            self.se = random_pick(SE, [0.7, 0.3])
+            return
         if self.se == 3:
-            self.se = random_pick([1,3],[0.3, 0.7])
+            self.se = random_pick(SE, [0.3, 0.7])
+            return
         else:
             raise ValueError('Input v error')
 
+def random_pick(some_list, probability):
+    x = random.uniform(0, 1)
+    cprobability = 0.0
+    global item
+    for item, item_probability in zip(some_list, probability):
+        cprobability += item_probability
+        if x < cprobability:
+            break
+    return item
 
 
 class OtherUser(object):
@@ -171,16 +181,18 @@ class OtherUser(object):
         self.id = 0    #这个是需要的，他会在BS类里进行初始化
         self.rest_time = time   #剩余需要处理的时间
 
-    def get_time(self):
-        return self.rest_time
-
+    #  返回的ti 是什么，这个有什么影响吗
     def time_step(self):
-        ti = 0
         if self.rest_time < 0:
             self.bs.remove_user(self)
         else:
             self.rest_time  = self.rest_time-1
-            ti = 1
-        return ti
 
 
+if __name__ == "__main__":
+    env = Vehicle()
+    state = env.reset()
+    for i in range(49):
+        action = env.sample_action()
+        state, reward, done, info = env.step(action)
+        # print(state,reward, action)

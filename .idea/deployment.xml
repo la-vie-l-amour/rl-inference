@@ -1,16 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="On explicit save action" promptOnRemoteOverwrite="CHECK_CONTENT" serverName="rl-inference" createEmptyFolders="true" confirmBeforeUploading="false" autoUploadExternalChanges="true" notifyRemoteChanges="true">
+  <component name="PublishConfigData" autoUpload="On explicit save action" promptOnRemoteOverwrite="CHECK_CONTENT" serverName="rl-inference" createEmptyFolders="true" confirmBeforeUploading="false" confirmBeforeDeletion="false" autoUploadExternalChanges="true" notifyRemoteChanges="true">
+    <option name="confirmBeforeDeletion" value="false" />
     <option name="confirmBeforeUploading" value="false" />
     <serverData>
-      <paths name="PPO">
+      <paths name="PPO (2)">
         <serverdata>
           <mappings>
             <mapping local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
-      <paths name="algo_rl">
+      <paths name="SAC">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="SAC (2)">
         <serverdata>
           <mappings>
             <mapping local="$PROJECT_DIR$" web="/" />
@@ -21,6 +29,13 @@
         <serverdata>
           <mappings>
             <mapping deploy="/data/rl-inference" local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="servw">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/data/rl-inference" local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
