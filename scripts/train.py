@@ -100,7 +100,7 @@ def main(args):
     eposide_rewads = []
     eposide_stds = []
 
-    trainer.reset_models()   # 将reset_models放在这里，使程序跑的很慢，如果是要提高程序运行的速度，应该将其放在for循环内
+    # trainer.reset_models()   # 将reset_models放在这里，使程序跑的很慢，如果是要提高程序运行的速度，应该将其放在for循环内
     for episode in range(1, args.n_episodes):
         logger.log("\n=== Episode {} ===".format(episode))
         start_time = time.time()
@@ -108,7 +108,7 @@ def main(args):
         msg = "Training on [{}/{}] data points"
         logger.log(msg.format(buffer.total_steps, buffer.total_steps * args.action_repeat))
         # 2.对transition model 和reward model进行初始化,为何要每轮都要进行模型的初始化？？？，其实这里是训练了n_episodes 个model,
-        # trainer.reset_models()
+        trainer.reset_models()
         # 3. 对上面的模型进行训练
         ensemble_loss, reward_loss = trainer.train()
 
@@ -146,7 +146,7 @@ def main(args):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--logdir", type=str, default="log")
-    parser.add_argument("--config_name", type=str, default="Vehicle")  # Pendulum-v1, SparseMountainCar-v0, FrozenLake-v1,Vehicle
+    parser.add_argument("--config_name", type=str, default="SparseMountainCar-v0")  # Pendulum-v1, SparseMountainCar-v0, FrozenLake-v1,Vehicle
     parser.add_argument("--strategy", type=str, default="information")
     parser.add_argument("--seed", type=int, default=0)
     args = parser.parse_args()   # args, unknown = parser.parse_know_args()

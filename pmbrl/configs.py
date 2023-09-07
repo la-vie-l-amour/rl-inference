@@ -135,15 +135,11 @@ class MountainCarConfig(Config):
         # self.n_train_epochs = 100
         self.n_seed_episodes = 5
         self.expl_scale = 1.0
-        self.n_episodes = 30
+        self.n_episodes = 20
         self.ensemble_size = 25
         self.record_every = 0  #改，从None改为0
-        self.optimisation_iters = 2
+        # self.optimisation_iters = 2
 
-        self.use_exploration = False
-
-        # self.n_train_epochs = 30  # 原本是默认
-        #         # # self.n_train_epochs = 1
 
 
 

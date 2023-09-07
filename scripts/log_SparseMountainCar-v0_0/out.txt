@@ -1,4 +1,4 @@
-11:45:27
+11:28:33
 
 === Loading experiment [device: cuda] ===
 
@@ -17,10 +17,10 @@
  'logdir': 'SparseMountainCar-v0',
  'max_episode_len': 500,
  'n_candidates': 500,
- 'n_episodes': 30,
+ 'n_episodes': 20,
  'n_seed_episodes': 5,
- 'n_train_epochs': 30,
- 'optimisation_iters': 2,
+ 'n_train_epochs': 100,
+ 'optimisation_iters': 5,
  'plan_horizon': 30,
  'record_every': 0,
  'reward_scale': 1.0,
@@ -31,529 +31,518 @@
  'use_mean': False,
  'use_reward': True}
 
-Collected seeds: [5 episodes | 738 frames]
+Collected seeds: [5 episodes | 835 frames]
 
 === Episode 1 ===
-Training on [738/2214] data points
-> Train epoch 20 [ensemble -61.77 | reward 0.00]
-Ensemble loss -79.98 / Reward Loss 0.00
+Training on [835/2505] data points
+> Train epoch 20 [ensemble -74.65 | reward 0.00]
+> Train epoch 40 [ensemble -96.32 | reward 0.00]
+> Train epoch 60 [ensemble -104.11 | reward 0.00]
+> Train epoch 80 [ensemble -108.03 | reward 0.00]
+> Train epoch 100 [ensemble -110.44 | reward 0.00]
+Ensemble loss -110.44 / Reward Loss 0.00
 Setup recoder @ log_SparseMountainCar-v0_0/videos/1.mp4
 
 === Collecting data [1] ===
 > Step 25 [reward 0.00]
-Rewards 1.00 / Steps 27.00
+> Step 25 [reward 0.00]
+Rewards 1.00 / Steps 23.00
 Reward stats:
- {'max': '751.80', 'mean': '78.11', 'min': '-0.45', 'std': '158.19'}
+ {'max': '1.82', 'mean': '0.13', 'min': '-1.33', 'std': '0.29'}
 Information gain stats:
- {'max': '171.89', 'mean': '52.30', 'min': '8.81', 'std': '42.01'}
-Episode time 12.24
+ {'max': '115.59', 'mean': '54.01', 'min': '9.00', 'std': '28.38'}
+Episode time 63.26
 Saved _metrics_
 
 === Episode 2 ===
-Training on [765/2295] data points
-> Train epoch 20 [ensemble -113.38 | reward 0.00]
-Ensemble loss -114.69 / Reward Loss 0.00
+Training on [858/2574] data points
+> Train epoch 20 [ensemble -71.90 | reward 0.00]
+> Train epoch 40 [ensemble -93.86 | reward 0.00]
+> Train epoch 60 [ensemble -101.84 | reward 0.00]
+> Train epoch 80 [ensemble -105.96 | reward 0.00]
+> Train epoch 100 [ensemble -108.47 | reward 0.00]
+Ensemble loss -108.47 / Reward Loss 0.00
 Setup recoder @ log_SparseMountainCar-v0_0/videos/2.mp4
 
 === Collecting data [2] ===
+> Step 25 [reward 1.00]
 > Step 25 [reward 0.00]
-Rewards 1.00 / Steps 36.00
+> Step 25 [reward 1.00]
+> Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
+> Step 50 [reward 0.00]
+Rewards 1.00 / Steps 23.00
 Reward stats:
- {'max': '995.02', 'mean': '78.10', 'min': '-0.90', 'std': '204.47'}
+ {'max': '429.77', 'mean': '87.92', 'min': '-0.03', 'std': '120.26'}
 Information gain stats:
- {'max': '98.75', 'mean': '32.42', 'min': '8.29', 'std': '20.28'}
-Episode time 13.44
+ {'max': '107.81', 'mean': '46.34', 'min': '10.02', 'std': '20.85'}
+Episode time 67.82
 Saved _metrics_
 
 === Episode 3 ===
-Training on [801/2403] data points
-> Train epoch 20 [ensemble -117.07 | reward 0.00]
-Ensemble loss -117.37 / Reward Loss 0.00
+Training on [881/2643] data points
+> Train epoch 20 [ensemble -67.82 | reward 0.00]
+> Train epoch 40 [ensemble -91.22 | reward 0.00]
+> Train epoch 60 [ensemble -99.67 | reward 0.00]
+> Train epoch 80 [ensemble -104.00 | reward 0.00]
+> Train epoch 100 [ensemble -106.65 | reward 0.00]
+Ensemble loss -106.65 / Reward Loss 0.00
 Setup recoder @ log_SparseMountainCar-v0_0/videos/3.mp4
 
 === Collecting data [3] ===
-> Step 25 [reward 0.00]
-Rewards 1.00 / Steps 38.00
-Reward stats:
- {'max': '1808.72', 'mean': '174.60', 'min': '-0.35', 'std': '394.70'}
-Information gain stats:
- {'max': '105.02', 'mean': '36.29', 'min': '7.55', 'std': '20.56'}
-Episode time 14.43
-Saved _metrics_
-
-=== Episode 4 ===
-Training on [839/2517] data points
-> Train epoch 20 [ensemble -117.22 | reward 0.00]
-Ensemble loss -117.38 / Reward Loss 0.00
-Setup recoder @ log_SparseMountainCar-v0_0/videos/4.mp4
-
-=== Collecting data [4] ===
-> Step 25 [reward 0.00]
-> Step 50 [reward 0.00]
-Rewards 1.00 / Steps 56.00
-Reward stats:
- {'max': '960.67', 'mean': '43.64', 'min': '-0.26', 'std': '154.25'}
-Information gain stats:
- {'max': '82.93', 'mean': '24.57', 'min': '7.28', 'std': '13.26'}
-Episode time 19.38
-Saved _metrics_
-
-=== Episode 5 ===
-Training on [895/2685] data points
-> Train epoch 20 [ensemble -117.89 | reward 0.00]
-Ensemble loss -117.76 / Reward Loss 0.00
-Setup recoder @ log_SparseMountainCar-v0_0/videos/5.mp4
-
-=== Collecting data [5] ===
+> Step 25 [reward 1.00]
+> Step 25 [reward 1.00]
 > Step 25 [reward 1.00]
 Rewards 1.00 / Steps 25.00
 Reward stats:
- {'max': '1091.45', 'mean': '125.64', 'min': '-0.33', 'std': '262.73'}
+ {'max': '490.83', 'mean': '84.09', 'min': '-0.06', 'std': '129.25'}
 Information gain stats:
- {'max': '83.68', 'mean': '33.42', 'min': '8.85', 'std': '16.73'}
-Episode time 10.94
+ {'max': '82.03', 'mean': '33.49', 'min': '9.46', 'std': '12.13'}
+Episode time 60.82
+Saved _metrics_
+
+=== Episode 4 ===
+Training on [906/2718] data points
+> Train epoch 20 [ensemble -66.45 | reward 0.00]
+> Train epoch 40 [ensemble -89.80 | reward 0.00]
+> Train epoch 60 [ensemble -98.35 | reward 0.00]
+> Train epoch 80 [ensemble -102.80 | reward 0.00]
+> Train epoch 100 [ensemble -105.55 | reward 0.00]
+Ensemble loss -105.55 / Reward Loss 0.00
+Setup recoder @ log_SparseMountainCar-v0_0/videos/4.mp4
+
+=== Collecting data [4] ===
+> Step 25 [reward 1.00]
+> Step 25 [reward 1.00]
+> Step 25 [reward 0.00]
+> Step 25 [reward 1.00]
+> Step 25 [reward 1.00]
+Rewards 1.00 / Steps 25.00
+Reward stats:
+ {'max': '748.38', 'mean': '132.94', 'min': '0.03', 'std': '199.11'}
+Information gain stats:
+ {'max': '81.07', 'mean': '37.75', 'min': '10.15', 'std': '13.05'}
+Episode time 61.80
+Saved _metrics_
+
+=== Episode 5 ===
+Training on [931/2793] data points
+> Train epoch 20 [ensemble -64.31 | reward 0.00]
+> Train epoch 40 [ensemble -88.35 | reward 0.00]
+> Train epoch 60 [ensemble -97.40 | reward 0.00]
+> Train epoch 80 [ensemble -102.14 | reward 0.00]
+> Train epoch 100 [ensemble -105.11 | reward 0.00]
+Ensemble loss -105.11 / Reward Loss 0.00
+Setup recoder @ log_SparseMountainCar-v0_0/videos/5.mp4
+
+=== Collecting data [5] ===
+> Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
+Rewards 1.00 / Steps 24.00
+Reward stats:
+ {'max': '703.12', 'mean': '120.78', 'min': '-1.80', 'std': '184.39'}
+Information gain stats:
+ {'max': '78.44', 'mean': '30.70', 'min': '8.27', 'std': '12.51'}
+Episode time 60.38
 Saved _metrics_
 
 === Episode 6 ===
-Training on [920/2760] data points
-> Train epoch 20 [ensemble -118.38 | reward 0.00]
-Ensemble loss -118.37 / Reward Loss 0.00
+Training on [955/2865] data points
+> Train epoch 20 [ensemble -64.62 | reward 0.00]
+> Train epoch 40 [ensemble -88.18 | reward 0.00]
+> Train epoch 60 [ensemble -97.27 | reward 0.00]
+> Train epoch 80 [ensemble -102.09 | reward 0.00]
+> Train epoch 100 [ensemble -105.09 | reward 0.00]
+Ensemble loss -105.09 / Reward Loss 0.00
 Setup recoder @ log_SparseMountainCar-v0_0/videos/6.mp4
 
 === Collecting data [6] ===
 > Step 25 [reward 0.00]
-Rewards 1.00 / Steps 37.00
+> Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
+Rewards 1.00 / Steps 26.00
 Reward stats:
- {'max': '967.42', 'mean': '102.60', 'min': '-0.14', 'std': '221.93'}
+ {'max': '620.53', 'mean': '104.18', 'min': '-0.78', 'std': '162.02'}
 Information gain stats:
- {'max': '78.32', 'mean': '30.76', 'min': '7.65', 'std': '14.12'}
-Episode time 14.26
+ {'max': '81.46', 'mean': '31.46', 'min': '7.81', 'std': '14.72'}
+Episode time 68.70
 Saved _metrics_
 
 === Episode 7 ===
-Training on [957/2871] data points
-> Train epoch 20 [ensemble -118.37 | reward 0.00]
-Ensemble loss -118.41 / Reward Loss 0.00
+Training on [981/2943] data points
+> Train epoch 20 [ensemble -64.58 | reward 0.00]
+> Train epoch 40 [ensemble -88.14 | reward 0.00]
+> Train epoch 60 [ensemble -97.28 | reward 0.00]
+> Train epoch 80 [ensemble -102.17 | reward 0.00]
+> Train epoch 100 [ensemble -105.16 | reward 0.00]
+Ensemble loss -105.16 / Reward Loss 0.00
 Setup recoder @ log_SparseMountainCar-v0_0/videos/7.mp4
 
 === Collecting data [7] ===
 > Step 25 [reward 0.00]
-> Step 50 [reward 0.00]
-> Step 75 [reward 0.00]
-> Step 100 [reward 0.00]
-> Step 125 [reward 0.00]
-> Step 150 [reward 0.00]
-Rewards 0.00 / Steps 167.00
+> Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
+> Step 25 [reward 1.00]
+> Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
+Rewards 1.00 / Steps 27.00
 Reward stats:
- {'max': '3.96', 'mean': '-0.02', 'min': '-0.22', 'std': '0.03'}
+ {'max': '778.85', 'mean': '126.85', 'min': '-0.31', 'std': '204.83'}
 Information gain stats:
- {'max': '57.30', 'mean': '18.52', 'min': '5.83', 'std': '3.29'}
-Episode time 50.90
+ {'max': '77.83', 'mean': '27.79', 'min': '7.60', 'std': '12.41'}
+Episode time 74.65
 Saved _metrics_
 
 === Episode 8 ===
-Training on [1124/3372] data points
-> Train epoch 20 [ensemble -118.53 | reward 0.00]
-Ensemble loss -118.70 / Reward Loss 0.00
+Training on [1008/3024] data points
+> Train epoch 20 [ensemble -66.20 | reward 0.00]
+> Train epoch 40 [ensemble -89.27 | reward 0.00]
+> Train epoch 60 [ensemble -98.20 | reward 0.00]
+> Train epoch 80 [ensemble -102.91 | reward 0.00]
+> Train epoch 100 [ensemble -105.79 | reward 0.00]
+Ensemble loss -105.79 / Reward Loss 0.00
 Setup recoder @ log_SparseMountainCar-v0_0/videos/8.mp4
 
 === Collecting data [8] ===
 > Step 25 [reward 0.00]
-> Step 50 [reward 0.00]
-> Step 75 [reward 0.00]
-Rewards 1.00 / Steps 79.00
+> Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
+Rewards 1.00 / Steps 24.00
 Reward stats:
- {'max': '549.74', 'mean': '26.23', 'min': '-0.26', 'std': '88.17'}
+ {'max': '1228.48', 'mean': '246.92', 'min': '-0.14', 'std': '335.22'}
 Information gain stats:
- {'max': '91.00', 'mean': '28.12', 'min': '8.53', 'std': '11.41'}
-Episode time 27.75
+ {'max': '77.76', 'mean': '31.83', 'min': '6.32', 'std': '15.70'}
+Episode time 75.13
 Saved _metrics_
 
 === Episode 9 ===
-Training on [1203/3609] data points
-> Train epoch 20 [ensemble -117.01 | reward 0.00]
-Ensemble loss -117.36 / Reward Loss 0.00
+Training on [1032/3096] data points
+> Train epoch 20 [ensemble -65.77 | reward 0.00]
+> Train epoch 40 [ensemble -88.84 | reward 0.00]
+> Train epoch 60 [ensemble -97.85 | reward 0.00]
+> Train epoch 80 [ensemble -102.57 | reward 0.00]
+> Train epoch 100 [ensemble -105.51 | reward 0.00]
+Ensemble loss -105.51 / Reward Loss 0.00
 Setup recoder @ log_SparseMountainCar-v0_0/videos/9.mp4
 
 === Collecting data [9] ===
 > Step 25 [reward 0.00]
-Rewards 1.00 / Steps 42.00
+> Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
+Rewards 1.00 / Steps 26.00
 Reward stats:
- {'max': '454.93', 'mean': '35.91', 'min': '-0.12', 'std': '87.25'}
+ {'max': '901.11', 'mean': '145.85', 'min': '-1.10', 'std': '235.29'}
 Information gain stats:
- {'max': '79.39', 'mean': '30.24', 'min': '8.68', 'std': '12.87'}
-Episode time 17.48
+ {'max': '84.65', 'mean': '30.20', 'min': '6.85', 'std': '15.36'}
+Episode time 74.61
 Saved _metrics_
 
 === Episode 10 ===
-Training on [1245/3735] data points
-> Train epoch 20 [ensemble -117.64 | reward 0.00]
-Ensemble loss -117.78 / Reward Loss 0.00
+Training on [1058/3174] data points
+> Train epoch 20 [ensemble -67.32 | reward 0.00]
+> Train epoch 40 [ensemble -89.77 | reward 0.00]
+> Train epoch 60 [ensemble -98.54 | reward 0.00]
+> Train epoch 80 [ensemble -103.13 | reward 0.00]
+> Train epoch 100 [ensemble -105.98 | reward 0.00]
+Ensemble loss -105.98 / Reward Loss 0.00
 Setup recoder @ log_SparseMountainCar-v0_0/videos/10.mp4
 
 === Collecting data [10] ===
 > Step 25 [reward 0.00]
-Rewards 1.00 / Steps 33.00
+> Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
+Rewards 1.00 / Steps 32.00
 Reward stats:
- {'max': '427.86', 'mean': '19.30', 'min': '-0.35', 'std': '59.93'}
+ {'max': '414.57', 'mean': '20.97', 'min': '-0.66', 'std': '65.54'}
 Information gain stats:
- {'max': '84.78', 'mean': '28.09', 'min': '8.71', 'std': '12.77'}
-Episode time 14.72
+ {'max': '87.44', 'mean': '33.41', 'min': '5.99', 'std': '18.43'}
+Episode time 80.65
 Saved _metrics_
 
 === Episode 11 ===
-Training on [1278/3834] data points
-> Train epoch 20 [ensemble -118.38 | reward 0.00]
-Ensemble loss -118.50 / Reward Loss 0.00
+Training on [1090/3270] data points
+> Train epoch 20 [ensemble -65.98 | reward 0.00]
+> Train epoch 40 [ensemble -88.69 | reward 0.00]
+> Train epoch 60 [ensemble -97.76 | reward 0.00]
+> Train epoch 80 [ensemble -102.53 | reward 0.00]
+> Train epoch 100 [ensemble -105.44 | reward 0.00]
+Ensemble loss -105.44 / Reward Loss 0.00
 Setup recoder @ log_SparseMountainCar-v0_0/videos/11.mp4
 
 === Collecting data [11] ===
 > Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
 > Step 50 [reward 0.00]
-Rewards 1.00 / Steps 68.00
+> Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
+> Step 50 [reward 0.00]
+> Step 25 [reward 0.00]
+> Step 50 [reward 0.00]
+Rewards 1.00 / Steps 33.00
 Reward stats:
- {'max': '390.75', 'mean': '3.81', 'min': '-0.28', 'std': '23.07'}
+ {'max': '1372.64', 'mean': '203.97', 'min': '-0.14', 'std': '337.94'}
 Information gain stats:
- {'max': '96.14', 'mean': '25.11', 'min': '6.33', 'std': '14.25'}
-Episode time 24.58
+ {'max': '80.65', 'mean': '27.99', 'min': '6.83', 'std': '16.64'}
+Episode time 108.80
 Saved _metrics_
 
 === Episode 12 ===
-Training on [1346/4038] data points
-> Train epoch 20 [ensemble -118.60 | reward 0.00]
-Ensemble loss -118.82 / Reward Loss 0.00
+Training on [1123/3369] data points
+> Train epoch 20 [ensemble -68.12 | reward 0.00]
+> Train epoch 40 [ensemble -90.56 | reward 0.00]
+> Train epoch 60 [ensemble -99.16 | reward 0.00]
+> Train epoch 80 [ensemble -103.64 | reward 0.00]
+> Train epoch 100 [ensemble -106.41 | reward 0.00]
+Ensemble loss -106.41 / Reward Loss 0.00
 Setup recoder @ log_SparseMountainCar-v0_0/videos/12.mp4
 
 === Collecting data [12] ===
 > Step 25 [reward 0.00]
-> Step 50 [reward 0.00]
-> Step 75 [reward 0.00]
-> Step 100 [reward 0.00]
-Rewards 1.00 / Steps 120.00
+> Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
+Rewards 1.00 / Steps 34.00
 Reward stats:
- {'max': '7880.72', 'mean': '88.91', 'min': '-0.86', 'std': '515.02'}
+ {'max': '2168.50', 'mean': '313.67', 'min': '-0.09', 'std': '536.02'}
 Information gain stats:
- {'max': '138.36', 'mean': '25.73', 'min': '7.57', 'std': '18.02'}
-Episode time 39.10
+ {'max': '99.43', 'mean': '32.39', 'min': '7.18', 'std': '20.95'}
+Episode time 87.39
 Saved _metrics_
 
 === Episode 13 ===
-Training on [1466/4398] data points
-> Train epoch 20 [ensemble -119.25 | reward 0.00]
-Ensemble loss -119.55 / Reward Loss 0.00
+Training on [1157/3471] data points
+> Train epoch 20 [ensemble -69.47 | reward 0.00]
+> Train epoch 40 [ensemble -91.29 | reward 0.00]
+> Train epoch 60 [ensemble -99.69 | reward 0.00]
+> Train epoch 80 [ensemble -104.09 | reward 0.00]
+> Train epoch 100 [ensemble -106.82 | reward 0.00]
+Ensemble loss -106.82 / Reward Loss 0.00
 Setup recoder @ log_SparseMountainCar-v0_0/videos/13.mp4
 
 === Collecting data [13] ===
 > Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
+> Step 50 [reward 0.00]
+> Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
+> Step 25 [reward 1.00]
+> Step 25 [reward 1.00]
+> Step 25 [reward 1.00]
+> Step 25 [reward 0.00]
 Rewards 1.00 / Steps 46.00
 Reward stats:
- {'max': '1873.20', 'mean': '15.41', 'min': '-1.57', 'std': '81.41'}
+ {'max': '3089.21', 'mean': '324.66', 'min': '-0.13', 'std': '691.22'}
 Information gain stats:
- {'max': '97.72', 'mean': '24.33', 'min': '7.58', 'std': '14.42'}
-Episode time 19.33
+ {'max': '100.86', 'mean': '38.68', 'min': '7.07', 'std': '24.05'}
+Episode time 84.10
 Saved _metrics_
 
 === Episode 14 ===
-Training on [1512/4536] data points
-> Train epoch 20 [ensemble -120.49 | reward 0.00]
-Ensemble loss -120.56 / Reward Loss 0.00
+Training on [1203/3609] data points
+> Train epoch 20 [ensemble -63.64 | reward 0.00]
+> Train epoch 40 [ensemble -87.14 | reward 0.00]
+> Train epoch 60 [ensemble -96.46 | reward 0.00]
+> Train epoch 80 [ensemble -101.33 | reward 0.00]
+> Train epoch 100 [ensemble -104.35 | reward 0.00]
+Ensemble loss -104.35 / Reward Loss 0.00
 Setup recoder @ log_SparseMountainCar-v0_0/videos/14.mp4
 
 === Collecting data [14] ===
 > Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
+> Step 50 [reward 0.00]
+> Step 25 [reward 0.00]
+> Step 50 [reward 0.00]
+> Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
+> Step 50 [reward 0.00]
+> Step 25 [reward 0.00]
+> Step 50 [reward 0.00]
+> Step 25 [reward 0.00]
 > Step 50 [reward 0.00]
 > Step 75 [reward 0.00]
-Rewards 1.00 / Steps 93.00
+> Step 25 [reward 1.00]
+Rewards 1.00 / Steps 40.00
 Reward stats:
- {'max': '46202.29', 'mean': '399.51', 'min': '-1.46', 'std': '2561.69'}
+ {'max': '1209.74', 'mean': '133.10', 'min': '-1.03', 'std': '270.55'}
 Information gain stats:
- {'max': '171.87', 'mean': '24.15', 'min': '6.53', 'std': '18.28'}
-Episode time 32.68
+ {'max': '90.72', 'mean': '27.42', 'min': '6.34', 'std': '17.66'}
+Episode time 114.62
 Saved _metrics_
 
 === Episode 15 ===
-Training on [1605/4815] data points
-> Train epoch 20 [ensemble -120.92 | reward 0.00]
-Ensemble loss -121.04 / Reward Loss 0.00
+Training on [1243/3729] data points
+> Train epoch 20 [ensemble -64.52 | reward 0.00]
+> Train epoch 40 [ensemble -87.66 | reward 0.00]
+> Train epoch 60 [ensemble -96.87 | reward 0.00]
+> Train epoch 80 [ensemble -101.67 | reward 0.00]
+> Train epoch 100 [ensemble -104.62 | reward 0.00]
+Ensemble loss -104.62 / Reward Loss 0.00
 Setup recoder @ log_SparseMountainCar-v0_0/videos/15.mp4
 
 === Collecting data [15] ===
 > Step 25 [reward 0.00]
-> Step 50 [reward 1.00]
-Rewards 1.00 / Steps 50.00
+> Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
+> Step 50 [reward 0.00]
+Rewards 1.00 / Steps 35.00
 Reward stats:
- {'max': '7941.26', 'mean': '74.14', 'min': '-1.88', 'std': '388.34'}
+ {'max': '1262.78', 'mean': '178.17', 'min': '-0.24', 'std': '310.11'}
 Information gain stats:
- {'max': '143.91', 'mean': '28.11', 'min': '7.40', 'std': '17.76'}
-Episode time 21.19
+ {'max': '99.65', 'mean': '30.51', 'min': '5.67', 'std': '21.13'}
+Episode time 101.79
 Saved _metrics_
 
 === Episode 16 ===
-Training on [1655/4965] data points
-> Train epoch 20 [ensemble -119.68 | reward 0.00]
-Ensemble loss -120.20 / Reward Loss 0.00
+Training on [1278/3834] data points
+> Train epoch 20 [ensemble -65.69 | reward 0.00]
+> Train epoch 40 [ensemble -88.75 | reward 0.00]
+> Train epoch 60 [ensemble -97.62 | reward 0.00]
+> Train epoch 80 [ensemble -102.26 | reward 0.00]
+> Train epoch 100 [ensemble -105.12 | reward 0.00]
+Ensemble loss -105.12 / Reward Loss 0.00
 Setup recoder @ log_SparseMountainCar-v0_0/videos/16.mp4
 
 === Collecting data [16] ===
 > Step 25 [reward 0.00]
-> Step 50 [reward 0.00]
-> Step 75 [reward 0.00]
-> Step 100 [reward 0.00]
-> Step 125 [reward 0.00]
-> Step 150 [reward 0.00]
-Rewards 0.00 / Steps 167.00
+> Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
+Rewards 1.00 / Steps 34.00
 Reward stats:
- {'max': '0.08', 'mean': '-0.02', 'min': '-2.18', 'std': '0.12'}
+ {'max': '1063.49', 'mean': '157.35', 'min': '-0.48', 'std': '259.69'}
 Information gain stats:
- {'max': '65.77', 'mean': '17.13', 'min': '6.08', 'std': '2.89'}
-Episode time 54.00
+ {'max': '96.27', 'mean': '31.40', 'min': '7.04', 'std': '18.90'}
+Episode time 92.06
 Saved _metrics_
 
 === Episode 17 ===
-Training on [1822/5466] data points
-> Train epoch 20 [ensemble -121.26 | reward 0.00]
-Ensemble loss -121.33 / Reward Loss 0.00
+Training on [1312/3936] data points
+> Train epoch 20 [ensemble -66.89 | reward 0.00]
+> Train epoch 40 [ensemble -89.42 | reward 0.00]
+> Train epoch 60 [ensemble -98.17 | reward 0.00]
+> Train epoch 80 [ensemble -102.64 | reward 0.00]
+> Train epoch 100 [ensemble -105.33 | reward 0.00]
+Ensemble loss -105.33 / Reward Loss 0.00
 Setup recoder @ log_SparseMountainCar-v0_0/videos/17.mp4
 
 === Collecting data [17] ===
 > Step 25 [reward 0.00]
-> Step 50 [reward 1.00]
-Rewards 1.00 / Steps 50.00
+> Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
+Rewards 1.00 / Steps 44.00
 Reward stats:
- {'max': '36.74', 'mean': '1.57', 'min': '-2.52', 'std': '5.22'}
+ {'max': '939.11', 'mean': '104.65', 'min': '-0.11', 'std': '215.34'}
 Information gain stats:
- {'max': '102.17', 'mean': '24.68', 'min': '4.93', 'std': '17.27'}
-Episode time 21.93
+ {'max': '102.68', 'mean': '41.26', 'min': '6.14', 'std': '24.31'}
+Episode time 86.67
 Saved _metrics_
 
 === Episode 18 ===
-Training on [1872/5616] data points
-> Train epoch 20 [ensemble -121.24 | reward 0.00]
-Ensemble loss -121.35 / Reward Loss 0.00
+Training on [1356/4068] data points
+> Train epoch 20 [ensemble -66.30 | reward 0.00]
+> Train epoch 40 [ensemble -88.32 | reward 0.00]
+> Train epoch 60 [ensemble -96.77 | reward 0.00]
+> Train epoch 80 [ensemble -101.23 | reward 0.00]
+> Train epoch 100 [ensemble -104.04 | reward 0.00]
+Ensemble loss -104.04 / Reward Loss 0.00
 Setup recoder @ log_SparseMountainCar-v0_0/videos/18.mp4
 
 === Collecting data [18] ===
+> Step 25 [reward 1.00]
 > Step 25 [reward 0.00]
-> Step 50 [reward 0.00]
-> Step 75 [reward 0.00]
-> Step 100 [reward 0.00]
-> Step 125 [reward 0.00]
-> Step 150 [reward 0.00]
-Rewards 0.00 / Steps 167.00
+> Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
+> Step 25 [reward 0.00]
+Rewards 1.00 / Steps 25.00
 Reward stats:
- {'max': '5.36', 'mean': '-0.06', 'min': '-2.90', 'std': '0.16'}
+ {'max': '600.65', 'mean': '98.15', 'min': '-0.18', 'std': '149.96'}
 Information gain stats:
- {'max': '46.85', 'mean': '16.93', 'min': '5.66', 'std': '2.92'}
-Episode time 30.82
+ {'max': '107.84', 'mean': '36.81', 'min': '7.57', 'std': '25.36'}
+Episode time 87.95
 Saved _metrics_
 
 === Episode 19 ===
-Training on [2039/6117] data points
-> Train epoch 20 [ensemble -120.73 | reward 0.00]
-Ensemble loss -120.81 / Reward Loss 0.00
+Training on [1381/4143] data points
+> Train epoch 20 [ensemble -65.80 | reward 0.00]
+> Train epoch 40 [ensemble -88.12 | reward 0.00]
+> Train epoch 60 [ensemble -96.68 | reward 0.00]
+> Train epoch 80 [ensemble -101.21 | reward 0.00]
+> Train epoch 100 [ensemble -104.06 | reward 0.00]
+Ensemble loss -104.06 / Reward Loss 0.00
 Setup recoder @ log_SparseMountainCar-v0_0/videos/19.mp4
 
 === Collecting data [19] ===
 > Step 25 [reward 0.00]
 > Step 50 [reward 0.00]
-> Step 75 [reward 0.00]
-> Step 100 [reward 0.00]
-Rewards 1.00 / Steps 111.00
-Reward stats:
- {'max': '44.38', 'mean': '0.74', 'min': '-2.85', 'std': '4.16'}
-Information gain stats:
- {'max': '101.12', 'mean': '21.05', 'min': '5.16', 'std': '12.52'}
-Episode time 16.35
-Saved _metrics_
-
-=== Episode 20 ===
-Training on [2150/6450] data points
-> Train epoch 20 [ensemble -121.03 | reward 0.00]
-Ensemble loss -121.08 / Reward Loss 0.00
-Setup recoder @ log_SparseMountainCar-v0_0/videos/20.mp4
-
-=== Collecting data [20] ===
 > Step 25 [reward 0.00]
-> Step 50 [reward 0.00]
-Rewards 1.00 / Steps 71.00
-Reward stats:
- {'max': '320.60', 'mean': '5.22', 'min': '-2.20', 'std': '19.22'}
-Information gain stats:
- {'max': '87.11', 'mean': '23.81', 'min': '6.98', 'std': '12.49'}
-Episode time 13.19
-Saved _metrics_
-
-=== Episode 21 ===
-Training on [2221/6663] data points
-> Train epoch 20 [ensemble -121.23 | reward 0.00]
-Ensemble loss -121.23 / Reward Loss 0.00
-Setup recoder @ log_SparseMountainCar-v0_0/videos/21.mp4
-
-=== Collecting data [21] ===
 > Step 25 [reward 0.00]
-> Step 50 [reward 0.00]
-> Step 75 [reward 0.00]
-> Step 100 [reward 0.00]
-> Step 125 [reward 0.00]
-> Step 150 [reward 0.00]
-Rewards 1.00 / Steps 155.00
-Reward stats:
- {'max': '43.67', 'mean': '0.95', 'min': '-2.46', 'std': '4.13'}
-Information gain stats:
- {'max': '104.64', 'mean': '22.11', 'min': '6.47', 'std': '13.30'}
-Episode time 20.93
-Saved _metrics_
-
-=== Episode 22 ===
-Training on [2376/7128] data points
-> Train epoch 20 [ensemble -121.01 | reward 0.00]
-Ensemble loss -121.14 / Reward Loss 0.00
-Setup recoder @ log_SparseMountainCar-v0_0/videos/22.mp4
-
-=== Collecting data [22] ===
 > Step 25 [reward 0.00]
-> Step 50 [reward 0.00]
-> Step 75 [reward 0.00]
-> Step 100 [reward 0.00]
-> Step 125 [reward 0.00]
-> Step 150 [reward 0.00]
-Rewards 0.00 / Steps 167.00
-Reward stats:
- {'max': '0.01', 'mean': '-0.03', 'min': '-2.36', 'std': '0.13'}
-Information gain stats:
- {'max': '72.08', 'mean': '17.35', 'min': '5.46', 'std': '2.99'}
-Episode time 22.42
-Saved _metrics_
-
-=== Episode 23 ===
-Training on [2543/7629] data points
-> Train epoch 20 [ensemble -121.36 | reward 0.00]
-Ensemble loss -121.34 / Reward Loss 0.00
-Setup recoder @ log_SparseMountainCar-v0_0/videos/23.mp4
-
-=== Collecting data [23] ===
 > Step 25 [reward 0.00]
-> Step 50 [reward 0.00]
-Rewards 1.00 / Steps 51.00
-Reward stats:
- {'max': '47.28', 'mean': '2.45', 'min': '-1.83', 'std': '6.43'}
-Information gain stats:
- {'max': '95.12', 'mean': '29.36', 'min': '6.23', 'std': '17.59'}
-Episode time 12.46
-Saved _metrics_
-
-=== Episode 24 ===
-Training on [2594/7782] data points
-> Train epoch 20 [ensemble -121.19 | reward 0.00]
-Ensemble loss -121.24 / Reward Loss 0.00
-Setup recoder @ log_SparseMountainCar-v0_0/videos/24.mp4
-
-=== Collecting data [24] ===
 > Step 25 [reward 0.00]
-> Step 50 [reward 0.00]
-Rewards 1.00 / Steps 70.00
-Reward stats:
- {'max': '226.14', 'mean': '5.22', 'min': '-1.79', 'std': '17.81'}
-Information gain stats:
- {'max': '97.71', 'mean': '24.69', 'min': '7.35', 'std': '13.36'}
-Episode time 14.31
-Saved _metrics_
-
-=== Episode 25 ===
-Training on [2664/7992] data points
-> Train epoch 20 [ensemble -121.27 | reward 0.00]
-Ensemble loss -121.28 / Reward Loss 0.00
-Setup recoder @ log_SparseMountainCar-v0_0/videos/25.mp4
-
-=== Collecting data [25] ===
 > Step 25 [reward 0.00]
-> Step 50 [reward 0.00]
-> Step 75 [reward 0.00]
-> Step 100 [reward 0.00]
-> Step 125 [reward 0.00]
-Rewards 1.00 / Steps 127.00
-Reward stats:
- {'max': '49.32', 'mean': '0.86', 'min': '-1.53', 'std': '3.68'}
-Information gain stats:
- {'max': '99.24', 'mean': '21.34', 'min': '6.73', 'std': '11.61'}
-Episode time 19.74
-Saved _metrics_
-
-=== Episode 26 ===
-Training on [2791/8373] data points
-> Train epoch 20 [ensemble -121.47 | reward 0.00]
-Ensemble loss -121.49 / Reward Loss 0.00
-Setup recoder @ log_SparseMountainCar-v0_0/videos/26.mp4
-
-=== Collecting data [26] ===
 > Step 25 [reward 0.00]
-> Step 50 [reward 0.00]
-> Step 75 [reward 0.00]
-> Step 100 [reward 0.00]
-> Step 125 [reward 0.00]
-> Step 150 [reward 0.00]
-Rewards 0.00 / Steps 167.00
-Reward stats:
- {'max': '0.74', 'mean': '-0.02', 'min': '-1.40', 'std': '0.06'}
-Information gain stats:
- {'max': '60.01', 'mean': '17.12', 'min': '5.66', 'std': '3.05'}
-Episode time 23.81
-Saved _metrics_
-
-=== Episode 27 ===
-Training on [2958/8874] data points
-> Train epoch 20 [ensemble -121.42 | reward 0.00]
-Ensemble loss -121.53 / Reward Loss 0.00
-Setup recoder @ log_SparseMountainCar-v0_0/videos/27.mp4
-
-=== Collecting data [27] ===
 > Step 25 [reward 0.00]
-> Step 50 [reward 0.00]
 Rewards 1.00 / Steps 55.00
 Reward stats:
- {'max': '1290.13', 'mean': '9.59', 'min': '-1.12', 'std': '45.09'}
+ {'max': '517.82', 'mean': '46.64', 'min': '0.08', 'std': '104.83'}
 Information gain stats:
- {'max': '101.64', 'mean': '27.17', 'min': '6.83', 'std': '16.55'}
-Episode time 14.17
-Saved _metrics_
-
-=== Episode 28 ===
-Training on [3013/9039] data points
-> Train epoch 20 [ensemble -121.81 | reward 0.00]
-Ensemble loss -121.82 / Reward Loss 0.00
-Setup recoder @ log_SparseMountainCar-v0_0/videos/28.mp4
-
-=== Collecting data [28] ===
-> Step 25 [reward 0.00]
-> Step 50 [reward 0.00]
-> Step 75 [reward 0.00]
-> Step 100 [reward 0.00]
-> Step 125 [reward 0.00]
-Rewards 1.00 / Steps 128.00
-Reward stats:
- {'max': '1758670.50', 'mean': '2162.85', 'min': '-1.54', 'std': '26947.78'}
-Information gain stats:
- {'max': '116.35', 'mean': '23.19', 'min': '5.06', 'std': '14.61'}
-Episode time 20.84
-Saved _metrics_
-
-=== Episode 29 ===
-Training on [3141/9423] data points
-> Train epoch 20 [ensemble -120.78 | reward 0.00]
-Ensemble loss -121.03 / Reward Loss 0.00
-Setup recoder @ log_SparseMountainCar-v0_0/videos/29.mp4
-
-=== Collecting data [29] ===
-> Step 25 [reward 0.00]
-> Step 50 [reward 0.00]
-> Step 75 [reward 0.00]
-> Step 100 [reward 0.00]
-> Step 125 [reward 0.00]
-> Step 150 [reward 0.00]
-Rewards 0.00 / Steps 167.00
-Reward stats:
- {'max': '0.23', 'mean': '-0.02', 'min': '-0.92', 'std': '0.04'}
-Information gain stats:
- {'max': '62.11', 'mean': '17.87', 'min': '6.10', 'std': '3.18'}
-Episode time 24.61
+ {'max': '100.44', 'mean': '25.87', 'min': '5.05', 'std': '18.41'}
+Episode time 103.72
 Saved _metrics_

@@ -166,7 +166,7 @@ class RewardModel(nn.Module):
 
     def loss(self, states, actions, rewards):
         r_hat = self(states, actions)
-        return F.mse_loss(r_hat, rewards)
+        return F.mse_loss(r_hat, rewards)  # MSE 均方误差
 
     def reset_parameters(self):
         self.fc_1 = nn.Linear(self.in_size, self.hidden_size)
